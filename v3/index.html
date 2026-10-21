@@ -73,12 +73,13 @@ section{border-bottom:1px solid var(--rule)}
 .sechead p{margin:14px 0 0;max-width:58ch;color:var(--ink-soft);font-size:15.5px}
 
 /* catalogue entries (from ג׳) */
-.entry{display:grid;grid-template-columns:52px 1fr 1.05fr;border-top:1px solid var(--rule)}
+.entry{display:grid;grid-template-columns:54px minmax(0,1fr) minmax(300px,36%);border-top:1px solid var(--rule)}
 .entry>*{padding:24px 20px}
 .entry .idx{border-inline-start:1px solid var(--rule);order:3;text-align:center}
 .entry .txt{border-inline-start:1px solid var(--rule);order:2}
 .entry .pic{order:1;padding:0}
-.entry .pic img{width:100%;height:100%;min-height:215px;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.entry .pic{display:block}
+.entry .pic img{width:100%;height:100%;min-height:250px;object-fit:cover;object-position:50% 40%;filter:saturate(.76) sepia(.08)}
 .entry h3{margin:0 0 7px;font-size:19.5px;font-weight:400;color:var(--forest)}
 .entry p{margin:0 0 12px;font-size:15px;color:var(--ink-soft)}
 .entry a{font-size:12px;letter-spacing:.12em;text-decoration:none;border-bottom:1px solid var(--forest);color:var(--forest);padding-bottom:2px}
@@ -97,7 +98,7 @@ section{border-bottom:1px solid var(--rule)}
   border:1px solid var(--forest);color:var(--forest);padding:11px 24px}
 
 /* treatments list */
-.treat{display:grid;grid-template-columns:1.05fr 1fr;border-top:1px solid var(--rule)}
+.treat{display:grid;grid-template-columns:minmax(300px,42%) minmax(0,1fr);border-top:1px solid var(--rule)}
 .treat .list{padding:26px 20px;border-inline-start:1px solid var(--rule)}
 .treat .pic{padding:0}
 .treat .pic img{width:100%;height:100%;min-height:280px;object-fit:cover;filter:saturate(.76) sepia(.08)}
@@ -108,7 +109,7 @@ section{border-bottom:1px solid var(--rule)}
 .treat .after{margin:16px 0 0;font-size:14.5px;color:var(--ink-soft)}
 
 /* note */
-.note{display:grid;grid-template-columns:.85fr 1.3fr;border-top:1px solid var(--rule)}
+.note{display:grid;grid-template-columns:minmax(260px,36%) minmax(0,1fr);border-top:1px solid var(--rule)}
 .note .q{border-inline-start:1px solid var(--rule);padding:clamp(26px,3.6vw,44px) 24px}
 .note img{aspect-ratio:1;object-fit:cover;filter:saturate(.76) sepia(.08)}
 .note blockquote{margin:10px 0 0;font-family:var(--hand);color:var(--forest);font-size:clamp(27px,3.6vw,42px);line-height:1.1}
@@ -133,6 +134,7 @@ section{border-bottom:1px solid var(--rule)}
   padding:15px clamp(18px,3.2vw,44px);font-size:11px;letter-spacing:.14em;color:var(--ink-soft)}
 
 @media (max-width:900px){
+  .entry .pic img{min-height:0;aspect-ratio:4/3;height:auto}
   .hero{grid-template-columns:1fr}
   .hero .cols{grid-template-columns:1fr;gap:14px}
   .hero .plate{border-inline-start:0;border-top:1px solid var(--rule);grid-template-columns:1fr 130px;align-items:start}
