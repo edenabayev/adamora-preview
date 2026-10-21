@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>אדמורה · דף הבית — סקיצה משולבת</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../img/icon-mint.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600&display=swap">
 <style>
 @font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap}
 :root{
   --paper:#EDEAE0; --card:#F6F4EC; --ink:#2A2D26; --ink-soft:#767A6D;
-  --forest:#1B3A12; --rule:#B9BCAE; --accent:#7D8B5F; --mint:#CDECDA;
+  --forest:#104404; --rule:#B9BCAE; --accent:#7D8B5F; --mint:#CDECDA;
   --hand:"Authentica","Assistant",sans-serif;
   --body:"Assistant",system-ui,sans-serif;
 }
@@ -35,7 +36,7 @@ a{color:inherit}
 
 /* masthead */
 .head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;padding-block:clamp(20px,3vw,34px) 14px}
-.head .mark{font-family:var(--hand);font-size:clamp(38px,5.6vw,62px);color:var(--forest)}
+.head .mark img{height:clamp(44px,5.4vw,62px);width:auto}
 .head .sub{font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-top:6px}
 nav.ruled{display:flex;flex-wrap:wrap;border-block:1px solid var(--rule)}
 nav.ruled a{flex:1 1 auto;text-align:center;padding:11px 14px;font-size:13.5px;letter-spacing:.07em;
@@ -154,8 +155,8 @@ section{border-bottom:1px solid var(--rule)}
 
   <div class="head pad">
     <div>
-      <div class="mark">אדמורה</div>
-      <div class="sub">BOTANICAL HEALING · תל אביב ועמק האלה</div>
+      <div class="mark"><img src="../img/logo-h.png" alt="אדמורה — Adamora · Botanical Healing"></div>
+      <div class="sub">תל אביב · עמק האלה</div>
     </div>
     <div class="lab">יובל דורון אבייב<br>נטורופתית · ארומתרפיסטית · מורה ליוגה</div>
   </div>
@@ -282,6 +283,7 @@ section{border-bottom:1px solid var(--rule)}
   </section>
 
   <div class="dates" id="dates">
+    <img src="../img/icon-mint.png" alt="" style="width:46px;margin:0 auto 10px;opacity:.9">
     <span class="kick">סדנאות פתוחות</span>
     <p>מדי פעם אני פותחת מפגש לתאריך מסוים, שאפשר להצטרף אליו גם לבד. המועדים הקרובים יופיעו כאן, ואשמח לעדכן אותך כשנפתח הבא.</p>
     <a href="https://wa.link/64q9ls">לקבל עדכון על המועד הבא</a>
@@ -359,7 +361,7 @@ section{border-bottom:1px solid var(--rule)}
   </div>
 
   <div class="foot">
-    <span>אדמורה · יובל דורון אבייב</span>
+    <span style="display:flex;align-items:center;gap:10px"><img src="../img/icon-mint.png" alt="" style="width:20px">אדמורה · יובל דורון אבייב</span>
     <span>סקיצה — כיוון משולב</span>
   </div>
 
