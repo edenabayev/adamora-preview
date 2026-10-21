@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אדמורה · כיוון ב׳ — קשת ותנועה</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500&display=swap">
+<style>
+@font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{
+  --deep:#0C2E08; --deep-2:#071D05; --paper:#EFEDE6; --mint:#CDECDA;
+  --ink:#232620; --ink-soft:#8A8F83;
+  --hand:"Authentica","Assistant",sans-serif;
+  --body:"Assistant",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--deep);color:var(--paper);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:22px}
+.hand{font-family:var(--hand);font-weight:400;line-height:1}
+
+.ribbon{background:#000;color:var(--mint);font-size:12px;letter-spacing:.14em;text-align:center;padding:7px}
+
+/* grain overlay */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.42'/></svg>")}
+
+/* ——— hero: full-bleed arch, slow drift ——— */
+.hero{position:relative;height:100svh;min-height:580px;display:grid;place-items:end center;overflow:hidden;background:var(--deep-2)}
+.arch{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(14px,3vw,40px)}
+.arch .frame{position:relative;width:100%;height:100%;overflow:hidden;
+  border-start-start-radius:50vw;border-start-end-radius:50vw}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;
+  transform:scale(1.14);animation:drift 26s ease-in-out infinite alternate;filter:saturate(.8) brightness(.82)}
+@keyframes drift{from{transform:scale(1.14) translate3d(0,0,0)}to{transform:scale(1.26) translate3d(2.2%,-2.6%,0)}}
+@media (prefers-reduced-motion:reduce){.arch img{animation:none}}
+.veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,29,5,.92) 6%,rgba(7,29,5,.35) 42%,rgba(7,29,5,.1) 72%)}
+
+.hero .top{position:absolute;inset-block-start:0;inset-inline:0;z-index:3;display:flex;justify-content:space-between;
+  align-items:baseline;gap:18px;padding:24px clamp(22px,4vw,54px);flex-wrap:wrap}
+.hero .top .mark{font-family:var(--hand);font-size:34px;color:var(--mint)}
+.hero nav{display:flex;gap:22px;font-size:14px;letter-spacing:.05em}
+.hero nav a{text-decoration:none;opacity:.86}
+.hero nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+
+.hero .say{position:relative;z-index:3;text-align:center;padding:0 22px clamp(42px,7vh,86px);max-width:760px}
+.hero h1{margin:0;font-family:var(--hand);color:var(--mint);font-size:clamp(54px,11vw,122px);line-height:.92}
+.hero p{margin:18px auto 0;max-width:52ch;font-size:clamp(15px,1.7vw,18px);color:#E6E7DF;opacity:.92}
+.hero .acts{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero .acts a{text-decoration:none;font-size:15px;letter-spacing:.04em;padding:13px 26px;
+  border:1px solid rgba(239,237,230,.5);border-radius:999px 999px 0 0}
+.hero .acts a.solid{background:var(--mint);color:var(--deep-2);border-color:var(--mint);font-weight:500}
+
+/* ——— sections ——— */
+section{padding-block:clamp(60px,9vw,108px)}
+.kick{font-family:var(--hand);color:var(--mint);font-size:30px;display:block;margin-bottom:8px}
+h2{margin:0;font-size:clamp(28px,3.6vw,44px);font-weight:200;line-height:1.2;letter-spacing:-.01em;max-width:20ch}
+.lede{margin-top:16px;max-width:54ch;color:#D8DAD0;font-size:16.5px}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,38px);margin-top:46px}
+.panel{position:relative;overflow:hidden;border-start-start-radius:34vw;border-start-end-radius:34vw;min-height:460px;
+  display:grid;align-content:end;padding:30px;background:#0A2607}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.72);
+  transition:transform .9s ease}
+.panel:hover img{transform:scale(1.05)}
+.panel .pv{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,29,5,.9) 10%,rgba(7,29,5,0) 62%)}
+.panel .t{position:relative;z-index:2}
+.panel h3{margin:0 0 8px;font-size:24px;font-weight:300}
+.panel p{margin:0 0 16px;font-size:15px;color:#D5D8CD}
+.panel a{text-decoration:none;font-size:14px;letter-spacing:.05em;border-bottom:1px solid var(--mint);color:var(--mint);padding-bottom:3px}
+
+/* light band */
+.light{background:var(--paper);color:var(--ink)}
+.light h2{color:var(--deep)}
+.light .kick{color:var(--deep)}
+.light .lede{color:#5C6057}
+.quote{text-align:center;max-width:22ch;margin-inline:auto;font-family:var(--hand);color:var(--deep);
+  font-size:clamp(34px,5.4vw,66px);line-height:1.06}
+.qafter{text-align:center;max-width:50ch;margin:22px auto 0;color:#5C6057;font-size:16px}
+
+.strip{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;font-size:12.5px;letter-spacing:.1em;color:#6E7268;margin-top:44px}
+.strip b{color:var(--ink);font-weight:600;letter-spacing:.03em}
+
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.prods figure{margin:0}
+.prods img{aspect-ratio:1;object-fit:cover;border-radius:999px 999px 10px 10px;background:#fff}
+.prods figcaption{margin-top:10px;font-size:13px;color:#6E7268;text-align:center}
+
+.end{text-align:center}
+.end .big{font-family:var(--hand);color:var(--mint);font-size:clamp(46px,8vw,96px);line-height:1}
+.end .rows{margin-top:26px;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:15px;color:#D5D8CD}
+footer{padding-block:34px 60px;text-align:center;font-size:12px;letter-spacing:.08em;color:#7E8478}
+
+@media (max-width:820px){
+  .pair{grid-template-columns:1fr}
+  .panel{min-height:380px}
+  .prods{grid-template-columns:1fr 1fr}
+  .hero nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="ribbon">כיווֹן ב׳ · קשת ותנועה — סקיצת עיצוב לעדן</div>
+
+<header class="hero">
+  <div class="arch"><div class="frame">
+    <img src="../img/portrait-15.jpg" alt="יובל אבייב-דורון בגינה">
+  </div></div>
+  <div class="veil"></div>
+
+  <div class="top">
+    <div class="mark">אדמורה</div>
+    <nav aria-label="תפריט ראשי">
+      <a href="#workshops">סדנאות</a>
+      <a href="#treatment">טיפולים</a>
+      <a href="#yoga">יוגה</a>
+      <a href="#story">עליי</a>
+      <a href="#contact">יצירת קשר</a>
+    </nav>
+  </div>
+
+  <div class="say">
+    <h1>אדמה · אור · אהבה</h1>
+    <p>אני יובל אבייב-דורון — נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה. מלווה נשים בתהליכי החיים דרך טיפולים הוליסטיים, סדנאות ותנועה.</p>
+    <div class="acts">
+      <a class="solid" href="#workshops">סדנה לקבוצה</a>
+      <a href="#treatment">טיפול אישי</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="workshops">
+    <div class="wrap">
+      <span class="kick">סדנאות</span>
+      <h2>פסק זמן שאפשר להריח, לגעת ולקחת הביתה</h2>
+      <p class="lede">ארומתרפיה חווייתית, רוקחות טבעית ויוגה — לצוותים, לקבוצות ולחברות. אני מגיעה עם כל הציוד, וכל אחת הולכת עם משהו שהיא הרכיבה בעצמה.</p>
+      <div class="pair">
+        <article class="panel">
+          <img src="../img/candles.jpg" alt="שולחן סדנה עם בקבוקונים">
+          <div class="pv"></div>
+          <div class="t">
+            <h3>ארומתרפיה ורוקחות</h3>
+            <p>מרקחת חיה סביב שולחן אחד — שמנים, משחות ותערובות אישיות.</p>
+            <a href="#contact">לפרטים</a>
+          </div>
+        </article>
+        <article class="panel" id="yoga">
+          <img src="../img/yoga-cobra.jpg" alt="יוגה">
+          <div class="pv"></div>
+          <div class="t">
+            <h3>יוגה ותנועה</h3>
+            <p>בחוץ או בפנים, גם למי שלא עשתה יוגה מעולם. בלי מראות ובלי להתבייש.</p>
+            <a href="#contact">לפרטים</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="story">
+    <div class="wrap">
+      <p class="quote">בריאות היא לא היעדר מחלה, היא היחס שלי לגוף</p>
+      <p class="qafter">אובחנתי עם קרוהן בצבא. במשך שנים ניסיתי להילחם בגוף שלי, עד שהבנתי שהכיוון הפוך — להקשיב לו. משם הגעתי לנטורופתיה.</p>
+      <div class="strip">
+        <span>כבר העברתי סדנאות ל־</span>
+        <span><b>עיריית תל אביב</b></span>
+        <span><b>סנטרל פארק</b></span>
+        <span><b>נילס יארד</b></span>
+        <span><b>צוותי חינוך</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="treatment">
+    <div class="wrap">
+      <span class="kick">טיפולים</span>
+      <h2>הטיפול מתחיל בשיחה, לא בשולחן</h2>
+      <p class="lede">נטורופתיה, ארומתרפיה, רפלקסולוגיה והטיפול המשולב — בקליניקות בתל אביב ובעמק האלה. בסוף כל טיפול את לוקחת הביתה תערובת שמנים אישית.</p>
+      <div class="pair">
+        <article class="panel">
+          <img src="../img/hands-table.jpg" alt="ידיים מעל שולחן עם שמנים">
+          <div class="pv"></div>
+          <div class="t">
+            <h3>הטיפול המשולב</h3>
+            <p>שיחה, תערובת שמנים, רייקי ורפלקסולוגיה עדינה.</p>
+            <a href="https://wa.link/64q9ls">לתיאום שיחה</a>
+          </div>
+        </article>
+        <article class="panel">
+          <img src="../img/yuval-balcony.jpg" alt="יובל בקליניקה">
+          <div class="pv"></div>
+          <div class="t">
+            <h3>ליווי נטורופתי</h3>
+            <p>תהליך לאורך זמן, לנשים שעוברות שינוי בגוף.</p>
+            <a href="https://wa.link/64q9ls">לתיאום שיחה</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <span class="kick">מוצרים</span>
+      <h2>מה שיוצא מהמרקחת</h2>
+      <div class="prods">
+        <figure><img src="../img/prod-body-oil.jpg" alt="שמן גוף"><figcaption>שמן גוף</figcaption></figure>
+        <figure><img src="../img/prod-calendula.jpg" alt="משחת קלנדולה"><figcaption>משחת קלנדולה</figcaption></figure>
+        <figure><img src="../img/prod-hand-cream.jpg" alt="קרם ידיים"><figcaption>קרם ידיים</figcaption></figure>
+        <figure><img src="../img/prod-burner.jpg" alt="תערובת למבער"><figcaption>תערובת למבער</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="end">
+    <div class="wrap">
+      <div class="big">נדבר</div>
+      <div class="rows">
+        <span><a href="https://wa.link/64q9ls">וואטסאפ</a></span>
+        <span>תל אביב · עמק האלה</span>
+        <span>סדנאות בכל הארץ</span>
+        <span>זום</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>אדמורה · יובל אבייב-דורון — סקיצת עיצוב, כיוון ב׳</footer>
+</body>
+</html>

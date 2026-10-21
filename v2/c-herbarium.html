@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אדמורה · כיוון ג׳ — מרקחת</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600&display=swap">
+<style>
+@font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{
+  --paper:#EDEAE0; --card:#F6F4EC; --ink:#2A2D26; --ink-soft:#767A6D;
+  --forest:#1B3A12; --rule:#B9BCAE; --accent:#7D8B5F;
+  --hand:"Authentica","Assistant",sans-serif;
+  --body:"Assistant",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.72;
+  background:var(--paper);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.055'/></svg>")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.hand{font-family:var(--hand);font-weight:400;line-height:1;color:var(--forest)}
+.ribbon{background:var(--forest);color:#E3EBD6;font-size:12px;letter-spacing:.14em;text-align:center;padding:7px}
+
+/* the sheet — double ruled frame, like a herbarium card */
+.sheet{max-width:1180px;margin:clamp(14px,3vw,38px) auto;background:var(--card);
+  border:1px solid var(--rule);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.inner{border:1px solid var(--rule);margin:7px;padding:clamp(20px,3.4vw,46px)}
+
+/* label typography */
+.lab{font-size:11px;letter-spacing:.2em;color:var(--ink-soft);text-transform:uppercase}
+.no{font-size:11px;letter-spacing:.18em;color:var(--accent)}
+.rule{border-top:1px solid var(--rule)}
+.rule.thin{border-top-style:solid;opacity:.6}
+
+/* header */
+.head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;padding-bottom:14px}
+.head .mark{font-family:var(--hand);font-size:clamp(40px,6vw,68px);color:var(--forest)}
+.head .sub{font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-top:6px}
+nav.ruled{display:flex;flex-wrap:wrap;gap:0;border-block:1px solid var(--rule);margin-top:14px}
+nav.ruled a{flex:1 1 auto;text-align:center;padding:11px 14px;font-size:13px;letter-spacing:.08em;
+  text-decoration:none;border-inline-start:1px solid var(--rule)}
+nav.ruled a:first-child{border-inline-start:0}
+nav.ruled a:hover{background:#E8E7DC}
+
+/* hero — specimen plate: drawing + small portrait + dense text */
+.plate{display:grid;grid-template-columns:1fr 1.25fr .85fr;gap:0;align-items:stretch}
+.plate>div{padding:34px 26px}
+.plate .sprig{display:grid;place-items:center;border-inline-start:1px solid var(--rule);order:3}
+.plate .mid{text-align:center;border-inline-start:1px solid var(--rule);order:2;display:grid;align-content:center;gap:16px}
+.plate .spec{order:1}
+.plate h1{margin:0;font-family:var(--hand);color:var(--forest);font-size:clamp(46px,7.4vw,96px);line-height:.96}
+.plate .latin{font-size:11px;letter-spacing:.26em;color:var(--accent)}
+.plate .mid p{margin:0;font-size:15px;color:var(--ink-soft);max-width:34ch;margin-inline:auto}
+.spec figure{margin:0}
+.spec img{aspect-ratio:3/4;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.spec figcaption{margin-top:9px;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);
+  border-top:1px solid var(--rule);padding-top:8px}
+.acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.acts a{text-decoration:none;font-size:13px;letter-spacing:.09em;padding:10px 20px;border:1px solid var(--forest);color:var(--forest)}
+.acts a.fill{background:var(--forest);color:var(--card)}
+
+/* catalogue entries */
+.entry{display:grid;grid-template-columns:54px 1fr 1.1fr;gap:0;border-top:1px solid var(--rule)}
+.entry>*{padding:24px 20px}
+.entry .idx{border-inline-start:1px solid var(--rule);order:3;text-align:center}
+.entry .txt{border-inline-start:1px solid var(--rule);order:2}
+.entry .pic{order:1;padding:0}
+.entry .pic img{width:100%;height:100%;min-height:210px;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.entry h3{margin:0 0 6px;font-size:19px;font-weight:400;color:var(--forest)}
+.entry p{margin:0 0 12px;font-size:14.5px;color:var(--ink-soft)}
+.entry a{font-size:12px;letter-spacing:.12em;text-decoration:none;border-bottom:1px solid var(--forest);color:var(--forest);padding-bottom:2px}
+
+/* ledger-style facts */
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.ledger div{padding:18px 16px;border-inline-start:1px solid var(--rule)}
+.ledger div:first-child{border-inline-start:0}
+.ledger b{display:block;font-weight:600;font-size:14px;margin-top:4px}
+
+/* note / story */
+.note{display:grid;grid-template-columns:1fr 1.4fr;border-top:1px solid var(--rule)}
+.note>div{padding:34px 24px}
+.note .q{border-inline-start:1px solid var(--rule);order:2}
+.note blockquote{margin:0;font-family:var(--hand);color:var(--forest);font-size:clamp(28px,3.8vw,44px);line-height:1.08}
+.note p{margin:16px 0 0;font-size:15px;color:var(--ink-soft);max-width:50ch}
+.note img{aspect-ratio:1;object-fit:cover;filter:saturate(.76) sepia(.08)}
+
+/* specimen row */
+.jars{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.jars figure{margin:0;padding:18px;border-inline-start:1px solid var(--rule)}
+.jars figure:first-child{border-inline-start:0}
+.jars img{aspect-ratio:1;object-fit:cover;background:#fff;mix-blend-mode:multiply}
+.jars figcaption{margin-top:10px;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-align:center}
+
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--rule);
+  padding-top:16px;margin-top:0;font-size:11px;letter-spacing:.14em;color:var(--ink-soft)}
+.contact{border-top:1px solid var(--rule);padding:34px 20px;text-align:center}
+.contact .big{font-family:var(--hand);color:var(--forest);font-size:clamp(38px,6vw,74px);line-height:1}
+.contact .rows{margin-top:18px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:14px;color:var(--ink-soft)}
+
+@media (max-width:880px){
+  .plate{grid-template-columns:1fr}
+  .plate .mid,.plate .sprig{border-inline-start:0;border-top:1px solid var(--rule)}
+  .plate .spec{order:2}.plate .mid{order:1}.plate .sprig{order:3}
+  .entry{grid-template-columns:1fr}
+  .entry .txt,.entry .idx{border-inline-start:0;border-top:1px solid var(--rule)}
+  .entry .idx{text-align:start}
+  .ledger{grid-template-columns:1fr 1fr}
+  .ledger div:nth-child(3){border-inline-start:0}
+  .note{grid-template-columns:1fr}
+  .note .q{border-inline-start:0;border-top:1px solid var(--rule)}
+  .jars{grid-template-columns:1fr 1fr}
+  .jars figure:nth-child(3){border-inline-start:0}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">כיווֹן ג׳ · מרקחת — סקיצת עיצוב לעדן</div>
+
+<div class="sheet"><div class="inner">
+
+  <div class="head">
+    <div>
+      <div class="mark">אדמורה</div>
+      <div class="sub">BOTANICAL HEALING · EST. TEL AVIV &amp; EMEK HA'ELA</div>
+    </div>
+    <div class="lab">יובל אבייב-דורון<br>נטורופתית · ארומתרפיסטית · מורה ליוגה</div>
+  </div>
+
+  <nav class="ruled" aria-label="תפריט ראשי">
+    <a href="#workshops">סדנאות</a>
+    <a href="#treatment">טיפולים</a>
+    <a href="#yoga">יוגה</a>
+    <a href="#products">מוצרים</a>
+    <a href="#story">עליי</a>
+    <a href="#contact">יצירת קשר</a>
+  </nav>
+
+  <div class="plate">
+    <div class="spec">
+      <figure>
+        <img src="../img/portrait-13.jpg" alt="יובל אבייב-דורון">
+        <figcaption>לוח א׳ · יובל אבייב-דורון, עמק האלה</figcaption>
+      </figure>
+    </div>
+    <div class="mid">
+      <span class="latin">ADAMA · OR · AHAVA</span>
+      <h1>אדמה<br>אור<br>אהבה</h1>
+      <p>נטורופתיה, ארומתרפיה ותנועה — לקבוצות שיושבות סביב שולחן אחד, ולנשים שמגיעות לטיפול אישי.</p>
+      <div class="acts">
+        <a class="fill" href="#workshops">סדנה לקבוצה</a>
+        <a href="#treatment">טיפול אישי</a>
+      </div>
+    </div>
+    <div class="sprig" aria-hidden="true">
+      <svg width="150" height="330" viewBox="0 0 150 330" fill="none" stroke="#7D8B5F" stroke-width="1.1" stroke-linecap="round">
+        <path d="M75 326 C75 250 74 170 75 8"/>
+        <g>
+          <path d="M75 288 C52 282 38 266 36 246 C58 246 72 262 75 288Z"/>
+          <path d="M75 288 C98 282 112 266 114 246 C92 246 78 262 75 288Z"/>
+          <path d="M75 236 C54 231 41 216 39 198 C59 198 72 213 75 236Z"/>
+          <path d="M75 236 C96 231 109 216 111 198 C91 198 78 213 75 236Z"/>
+          <path d="M75 186 C57 182 46 169 44 153 C61 153 72 166 75 186Z"/>
+          <path d="M75 186 C93 182 104 169 106 153 C89 153 78 166 75 186Z"/>
+          <path d="M75 138 C60 135 51 124 49 111 C63 111 73 122 75 138Z"/>
+          <path d="M75 138 C90 135 99 124 101 111 C87 111 77 122 75 138Z"/>
+        </g>
+        <path d="M75 96 C66 88 64 74 70 62 M75 96 C84 88 86 74 80 62"/>
+        <circle cx="75" cy="46" r="13"/>
+        <path d="M75 33 C68 40 68 52 75 59 C82 52 82 40 75 33Z"/>
+        <path d="M62 46 C69 39 81 39 88 46 C81 53 69 53 62 46Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ledger">
+    <div><span class="lab">קליניקות</span><b>תל אביב · עמק האלה</b></div>
+    <div><span class="lab">סדנאות</span><b>אצלי או אצלכם</b></div>
+    <div><span class="lab">כבר הועברו ל־</span><b>עיריית ת״א · סנטרל פארק · נילס יארד</b></div>
+    <div><span class="lab">הזמנה</span><b><a href="https://wa.link/64q9ls">בוואטסאפ</a></b></div>
+  </div>
+
+  <section id="workshops">
+    <div class="entry">
+      <div class="pic"><img src="../img/candles.jpg" alt="שולחן סדנה עם בקבוקונים"></div>
+      <div class="txt">
+        <span class="no">01 · AROMATHERAPY</span>
+        <h3>ארומתרפיה חווייתית</h3>
+        <p>מכירים את השמנים דרך הריח ולא דרך הסבר. כל אחת מרכיבה תערובת משלה ולוקחת אותה הביתה. אני מגיעה עם כל הציוד.</p>
+        <a href="#contact">לפרטים</a>
+      </div>
+      <div class="idx"><span class="lab">עד<br>60<br>משתתפות</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="pic"><img src="../img/hands-table.jpg" alt="ידיים מעל שולחן עם שמנים"></div>
+      <div class="txt">
+        <span class="no">02 · NATURAL PHARMACY</span>
+        <h3>רוקחות טבעית</h3>
+        <p>משחות, שמנים ומרחים מצמחים — מה שפעם עשו במטבח. ידיים, ריחות, ובלי מסך אחד.</p>
+        <a href="#contact">לפרטים</a>
+      </div>
+      <div class="idx"><span class="lab">קבוצה<br>או<br>צוות</span></div>
+    </div>
+
+    <div class="entry" id="yoga">
+      <div class="pic"><img src="../img/yoga-cobra.jpg" alt="יוגה"></div>
+      <div class="txt">
+        <span class="no">03 · YOGA</span>
+        <h3>יוגה ותנועה</h3>
+        <p>בשבילי יוגה היא לא עוד אימון כושר אלא דרך לחזור לגוף. בחוץ או בפנים, גם למי שלא עשתה יוגה מעולם.</p>
+        <a href="#contact">לפרטים</a>
+      </div>
+      <div class="idx"><span class="lab">בחוץ<br>או<br>בפנים</span></div>
+    </div>
+
+    <div class="entry" id="treatment">
+      <div class="pic"><img src="../img/yuval-balcony.jpg" alt="יובל בקליניקה"></div>
+      <div class="txt">
+        <span class="no">04 · TREATMENTS</span>
+        <h3>הטיפול המשולב</h3>
+        <p>מתחיל בשיחה וממשיך עם תערובת שמנים, רייקי ורפלקסולוגיה עדינה. בסוף את לוקחת הביתה תערובת אישית.</p>
+        <a href="https://wa.link/64q9ls">לתיאום שיחה</a>
+      </div>
+      <div class="idx"><span class="lab">בקליניקה<br>תל אביב<br>עמק האלה</span></div>
+    </div>
+  </section>
+
+  <section class="note" id="story">
+    <div><img src="../img/yuval-workshop.jpg" alt="יובל מכינה שולחן סדנה"></div>
+    <div class="q">
+      <span class="lab">מתוך המחברת</span>
+      <blockquote>בריאות היא לא היעדר מחלה, היא היחס שלי לגוף</blockquote>
+      <p>אובחנתי עם קרוהן בצבא. במשך שנים ניסיתי להילחם בגוף שלי, עד שהבנתי שהכיוון הפוך — להקשיב לו. משם הגעתי לנטורופתיה, ומשם לכל השאר.</p>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="jars">
+      <figure><img src="../img/prod-body-oil.jpg" alt="שמן גוף"><figcaption>שמן גוף</figcaption></figure>
+      <figure><img src="../img/prod-calendula.jpg" alt="משחת קלנדולה"><figcaption>משחת קלנדולה</figcaption></figure>
+      <figure><img src="../img/prod-hand-cream.jpg" alt="קרם ידיים"><figcaption>קרם ידיים</figcaption></figure>
+      <figure><img src="../img/prod-burner.jpg" alt="תערובת למבער"><figcaption>תערובת למבער</figcaption></figure>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="big">נדבר</div>
+    <div class="rows">
+      <span><a href="https://wa.link/64q9ls">וואטסאפ</a></span>
+      <span>תל אביב · עמק האלה</span>
+      <span>סדנאות בכל הארץ</span>
+      <span>זום</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>אדמורה · יובל אבייב-דורון</span>
+    <span>סקיצת עיצוב — כיוון ג׳</span>
+  </div>
+
+</div></div>
+</body>
+</html>
