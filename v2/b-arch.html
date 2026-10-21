@@ -33,7 +33,7 @@ a{color:inherit}
 .arch{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(14px,3vw,40px)}
 .arch .frame{position:relative;width:100%;height:100%;overflow:hidden;
   border-start-start-radius:50vw;border-start-end-radius:50vw}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;
   transform:scale(1.14);animation:drift 26s ease-in-out infinite alternate;filter:saturate(.8) brightness(.82)}
 @keyframes drift{from{transform:scale(1.14) translate3d(0,0,0)}to{transform:scale(1.26) translate3d(2.2%,-2.6%,0)}}
 @media (prefers-reduced-motion:reduce){.arch img{animation:none}}
@@ -47,11 +47,11 @@ a{color:inherit}
 .hero nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
 
 .hero .say{position:relative;z-index:3;text-align:center;padding:0 22px clamp(42px,7vh,86px);max-width:760px}
-.hero h1{margin:0;font-family:var(--hand);color:var(--mint);font-size:clamp(54px,11vw,122px);line-height:.92}
+.hero h1{margin:0;font-family:var(--hand);color:var(--mint);font-size:clamp(36px,5.6vw,70px);line-height:1;letter-spacing:.01em}
 .hero p{margin:18px auto 0;max-width:52ch;font-size:clamp(15px,1.7vw,18px);color:#E6E7DF;opacity:.92}
 .hero .acts{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .hero .acts a{text-decoration:none;font-size:15px;letter-spacing:.04em;padding:13px 26px;
-  border:1px solid rgba(239,237,230,.5);border-radius:999px 999px 0 0}
+  border:1px solid rgba(239,237,230,.55);border-radius:2px}
 .hero .acts a.solid{background:var(--mint);color:var(--deep-2);border-color:var(--mint);font-weight:500}
 
 /* ——— sections ——— */
@@ -86,7 +86,7 @@ h2{margin:0;font-size:clamp(28px,3.6vw,44px);font-weight:200;line-height:1.2;let
 
 .prods{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 .prods figure{margin:0}
-.prods img{aspect-ratio:1;object-fit:cover;border-radius:999px 999px 10px 10px;background:#fff}
+.prods img{aspect-ratio:1;object-fit:contain;padding:14px;border-radius:999px 999px 6px 6px;background:#fff}
 .prods figcaption{margin-top:10px;font-size:13px;color:#6E7268;text-align:center}
 
 .end{text-align:center}
@@ -108,7 +108,7 @@ footer{padding-block:34px 60px;text-align:center;font-size:12px;letter-spacing:.
 
 <header class="hero">
   <div class="arch"><div class="frame">
-    <img src="../img/portrait-15.jpg" alt="יובל אבייב-דורון בגינה">
+    <img src="../img/candles.jpg" alt="שולחן סדנה עם בקבוקוני שמנים">
   </div></div>
   <div class="veil"></div>
 
@@ -164,6 +164,7 @@ footer{padding-block:34px 60px;text-align:center;font-size:12px;letter-spacing:.
 
   <section class="light" id="story">
     <div class="wrap">
+      <figure style="margin:0 auto 26px;max-width:230px"><img src="../img/portrait-13.jpg" alt="יובל אבייב-דורון" style="aspect-ratio:3/4;object-fit:cover;border-start-start-radius:120px;border-start-end-radius:120px;filter:saturate(.82)"></figure>
       <p class="quote">בריאות היא לא היעדר מחלה, היא היחס שלי לגוף</p>
       <p class="qafter">אובחנתי עם קרוהן בצבא. במשך שנים ניסיתי להילחם בגוף שלי, עד שהבנתי שהכיוון הפוך — להקשיב לו. משם הגעתי לנטורופתיה.</p>
       <div class="strip">

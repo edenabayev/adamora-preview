@@ -43,8 +43,6 @@ nav.line a:hover{border-color:var(--ink)}
   font-size:clamp(58px,10.5vw,138px);line-height:.88;letter-spacing:-.01em}
 .hero .sub{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
 .hero .sub p{margin:0;font-size:15.5px;line-height:1.72;color:var(--ink)}
-.hero .sub p.first::first-letter{font-family:var(--hand);float:inline-start;font-size:52px;line-height:.8;
-  color:var(--forest);padding-inline-end:7px;padding-top:4px}
 .hero .right{position:relative;overflow:hidden;min-height:520px}
 .hero .right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:saturate(.86) contrast(1.03)}
 .hero .caption{position:absolute;inset-block-end:0;inset-inline-start:0;background:var(--paper);
@@ -91,7 +89,7 @@ section{padding-block:62px}
 .specimens{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .specimens figure{margin:0;padding:18px;border-inline-start:1px solid var(--line)}
 .specimens figure:first-child{border:0}
-.specimens img{aspect-ratio:1;object-fit:cover;background:#fff}
+.specimens img{aspect-ratio:1;object-fit:contain;background:#fff;padding:14px}
 .specimens figcaption{margin-top:10px;font-size:12px;letter-spacing:.09em;color:var(--ink-soft)}
 
 /* ——— contact ——— */
@@ -145,7 +143,7 @@ footer{padding-block:30px 56px;font-size:12px;letter-spacing:.08em;color:var(--i
     <div class="left">
       <h1>אדמה<br>אור<br>אהבה</h1>
       <div class="sub">
-        <p class="first">אני יובל אבייב-דורון, נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה. אני מלווה נשים בתהליכי החיים דרך טיפולים הוליסטיים, סדנאות ותנועה.</p>
+        <p>אני יובל אבייב-דורון, נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה. אני מלווה נשים בתהליכי החיים דרך טיפולים הוליסטיים, סדנאות ותנועה.</p>
         <p>העבודה שלי נעה בין שני מקומות: קבוצות — סדנאות חווייתיות שבהן כל אחת מרקחת משהו בידיים שלה, וטיפול אישי בקליניקה, שמתחיל תמיד בשיחה.</p>
       </div>
       <div class="acts">
