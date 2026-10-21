@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אדמורה · דף הבית — סקיצה משולבת</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600&display=swap">
+<style>
+@font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{
+  --paper:#EDEAE0; --card:#F6F4EC; --ink:#2A2D26; --ink-soft:#767A6D;
+  --forest:#1B3A12; --rule:#B9BCAE; --accent:#7D8B5F; --mint:#CDECDA;
+  --hand:"Authentica","Assistant",sans-serif;
+  --body:"Assistant",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.75;
+  background:var(--paper);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.055'/></svg>")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.hand{font-family:var(--hand);font-weight:400;line-height:1;color:var(--forest)}
+.ribbon{background:var(--forest);color:#E3EBD6;font-size:12px;letter-spacing:.14em;text-align:center;padding:7px}
+
+/* sheet with double rule frame (from ג׳) */
+.sheet{max-width:1200px;margin:clamp(12px,3vw,34px) auto;background:var(--card);border:1px solid var(--rule)}
+.inner{border:1px solid var(--rule);margin:7px}
+.pad{padding-inline:clamp(18px,3.2vw,44px)}
+
+.lab{font-size:11px;letter-spacing:.2em;color:var(--ink-soft)}
+.no{font-size:11px;letter-spacing:.18em;color:var(--accent)}
+.kick{font-family:var(--hand);color:var(--forest);font-size:30px;display:block;margin-bottom:6px}
+
+/* masthead */
+.head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end;padding-block:clamp(20px,3vw,34px) 14px}
+.head .mark{font-family:var(--hand);font-size:clamp(38px,5.6vw,62px);color:var(--forest)}
+.head .sub{font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-top:6px}
+nav.ruled{display:flex;flex-wrap:wrap;border-block:1px solid var(--rule)}
+nav.ruled a{flex:1 1 auto;text-align:center;padding:11px 14px;font-size:13.5px;letter-spacing:.07em;
+  text-decoration:none;border-inline-start:1px solid var(--rule)}
+nav.ruled a:first-child{border-inline-start:0}
+nav.ruled a:hover{background:#E8E7DC}
+
+/* ——— hero: asymmetric (from א׳), inside the frame (from ג׳) ——— */
+.hero{display:grid;grid-template-columns:1.25fr .78fr;border-bottom:1px solid var(--rule)}
+.hero .say{padding:clamp(34px,5vw,62px) clamp(18px,3.2vw,44px);position:relative}
+.hero .latin{font-size:11px;letter-spacing:.28em;color:var(--accent);display:block;margin-bottom:16px}
+.hero h1{margin:0;font-family:var(--hand);color:var(--forest);
+  font-size:clamp(62px,11.5vw,146px);line-height:.86;letter-spacing:-.005em}
+.hero .cols{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:780px}
+.hero .cols p{margin:0;font-size:15.5px;line-height:1.75}
+.hero .acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .acts a{text-decoration:none;font-size:14px;letter-spacing:.08em;padding:12px 24px;border:1px solid var(--forest);color:var(--forest)}
+.hero .acts a.fill{background:var(--forest);color:var(--card)}
+.hero .plate{border-inline-start:1px solid var(--rule);padding:clamp(22px,3vw,34px);display:grid;gap:18px;align-content:start}
+.hero .plate img{aspect-ratio:3/4;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.hero .plate figcaption{font-size:11px;letter-spacing:.14em;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:8px;margin-top:9px}
+.hero .plate figure{margin:0}
+.sprig{display:grid;place-items:center;padding-top:4px}
+
+/* ledger */
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.ledger div{padding:16px 16px;border-inline-start:1px solid var(--rule)}
+.ledger div:first-child{border-inline-start:0}
+.ledger b{display:block;font-weight:600;font-size:14.5px;margin-top:3px}
+
+section{border-bottom:1px solid var(--rule)}
+.sechead{padding:clamp(30px,4vw,52px) clamp(18px,3.2vw,44px) 22px}
+.sechead h2{margin:0;font-size:clamp(25px,3.2vw,36px);font-weight:200;color:var(--ink);letter-spacing:-.01em;max-width:24ch}
+.sechead p{margin:14px 0 0;max-width:58ch;color:var(--ink-soft);font-size:15.5px}
+
+/* catalogue entries (from ג׳) */
+.entry{display:grid;grid-template-columns:52px 1fr 1.05fr;border-top:1px solid var(--rule)}
+.entry>*{padding:24px 20px}
+.entry .idx{border-inline-start:1px solid var(--rule);order:3;text-align:center}
+.entry .txt{border-inline-start:1px solid var(--rule);order:2}
+.entry .pic{order:1;padding:0}
+.entry .pic img{width:100%;height:100%;min-height:215px;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.entry h3{margin:0 0 7px;font-size:19.5px;font-weight:400;color:var(--forest)}
+.entry p{margin:0 0 12px;font-size:15px;color:var(--ink-soft)}
+.entry a{font-size:12px;letter-spacing:.12em;text-decoration:none;border-bottom:1px solid var(--forest);color:var(--forest);padding-bottom:2px}
+
+/* who it fits */
+.fits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.fits div{padding:22px 20px;border-inline-start:1px solid var(--rule)}
+.fits div:first-child{border-inline-start:0}
+.fits h4{margin:0 0 6px;font-size:16px;font-weight:600}
+.fits p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* dates band */
+.dates{padding:clamp(28px,4vw,46px) clamp(18px,3.2vw,44px);text-align:center;background:#E9E7DC}
+.dates p{margin:10px auto 0;max-width:52ch;color:var(--ink-soft);font-size:15.5px}
+.dates a{display:inline-block;margin-top:18px;font-size:13px;letter-spacing:.1em;text-decoration:none;
+  border:1px solid var(--forest);color:var(--forest);padding:11px 24px}
+
+/* treatments list */
+.treat{display:grid;grid-template-columns:1.05fr 1fr;border-top:1px solid var(--rule)}
+.treat .list{padding:26px 20px;border-inline-start:1px solid var(--rule)}
+.treat .pic{padding:0}
+.treat .pic img{width:100%;height:100%;min-height:280px;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.treat ul{margin:0;padding:0;list-style:none}
+.treat li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dotted var(--rule);padding:9px 0;font-size:15.5px}
+.treat li:last-child{border-bottom:0}
+.treat li span{font-size:11px;letter-spacing:.14em;color:var(--accent);align-self:center}
+.treat .after{margin:16px 0 0;font-size:14.5px;color:var(--ink-soft)}
+
+/* note */
+.note{display:grid;grid-template-columns:.85fr 1.3fr;border-top:1px solid var(--rule)}
+.note .q{border-inline-start:1px solid var(--rule);padding:clamp(26px,3.6vw,44px) 24px}
+.note img{aspect-ratio:1;object-fit:cover;filter:saturate(.76) sepia(.08)}
+.note blockquote{margin:10px 0 0;font-family:var(--hand);color:var(--forest);font-size:clamp(27px,3.6vw,42px);line-height:1.1}
+.note p{margin:18px 0 0;font-size:15.5px;color:var(--ink-soft);max-width:52ch}
+
+/* proof */
+.proof{display:flex;flex-wrap:wrap;gap:18px 30px;padding:18px clamp(18px,3.2vw,44px);
+  font-size:12.5px;letter-spacing:.09em;color:var(--ink-soft);border-top:1px solid var(--rule)}
+.proof b{color:var(--ink);font-weight:600;letter-spacing:.03em}
+
+/* jars */
+.jars{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.jars figure{margin:0;padding:18px;border-inline-start:1px solid var(--rule)}
+.jars figure:first-child{border-inline-start:0}
+.jars img{aspect-ratio:1;object-fit:contain;padding:10px;background:#fff;mix-blend-mode:multiply}
+.jars figcaption{margin-top:10px;font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-align:center}
+
+.contact{padding:clamp(30px,4vw,50px) 20px;text-align:center}
+.contact .big{font-family:var(--hand);color:var(--forest);font-size:clamp(40px,6vw,78px);line-height:1}
+.contact .rows{margin-top:18px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:15px;color:var(--ink-soft)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--rule);
+  padding:15px clamp(18px,3.2vw,44px);font-size:11px;letter-spacing:.14em;color:var(--ink-soft)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero .cols{grid-template-columns:1fr;gap:14px}
+  .hero .plate{border-inline-start:0;border-top:1px solid var(--rule);grid-template-columns:1fr 130px;align-items:start}
+  .entry{grid-template-columns:1fr}
+  .entry .txt,.entry .idx{border-inline-start:0;border-top:1px solid var(--rule)}
+  .entry .idx{text-align:start}
+  .ledger,.fits{grid-template-columns:1fr 1fr}
+  .ledger div:nth-child(3),.fits div:nth-child(3){border-inline-start:0}
+  .treat,.note{grid-template-columns:1fr}
+  .treat .list,.note .q{border-inline-start:0;border-top:1px solid var(--rule)}
+  .jars{grid-template-columns:1fr 1fr}
+  .jars figure:nth-child(3){border-inline-start:0}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">סקיצה משולבת · דף הבית — לעיון</div>
+
+<div class="sheet"><div class="inner">
+
+  <div class="head pad">
+    <div>
+      <div class="mark">אדמורה</div>
+      <div class="sub">BOTANICAL HEALING · תל אביב ועמק האלה</div>
+    </div>
+    <div class="lab">יובל דורון אבייב<br>נטורופתית · ארומתרפיסטית · מורה ליוגה</div>
+  </div>
+
+  <nav class="ruled" aria-label="תפריט ראשי">
+    <a href="#workshops">סדנאות</a>
+    <a href="#dates">סדנאות פתוחות</a>
+    <a href="#treatments">טיפולים</a>
+    <a href="#products">מוצרים</a>
+    <a href="#story">עליי</a>
+    <a href="#contact">יצירת קשר</a>
+  </nav>
+
+  <div class="hero">
+    <div class="say">
+      <span class="latin">ADAMA · OR · AHAVA</span>
+      <h1>אדמה<br>אור<br>אהבה</h1>
+      <div class="cols">
+        <p>אני יובל דורון אבייב, נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה. מלווה נשים בתהליכי החיים דרך טיפולים הוליסטיים, סדנאות ותנועה.</p>
+        <p>רוב העבודה שלי מתחילה בטלפון של מישהי שאומרת "יש לנו קבוצה". משם אנחנו בונות יחד את המפגש — מה מתאים לכן, כמה אתן, ואיפה זה קורה. אני מגיעה עם כל הציוד.</p>
+      </div>
+      <div class="acts">
+        <a class="fill" href="#workshops">לקבוע מפגש לקבוצה</a>
+        <a href="#treatments">טיפול אישי</a>
+      </div>
+    </div>
+    <div class="plate">
+      <figure>
+        <img src="../img/portrait-13.jpg" alt="יובל דורון אבייב">
+        <figcaption>לוח א׳ · יובל דורון אבייב, עמק האלה</figcaption>
+      </figure>
+      <div class="sprig" aria-hidden="true">
+        <svg width="112" height="250" viewBox="0 0 150 330" fill="none" stroke="#7D8B5F" stroke-width="1.2" stroke-linecap="round">
+          <path d="M75 326 C75 250 74 170 75 8"/>
+          <path d="M75 288 C52 282 38 266 36 246 C58 246 72 262 75 288Z"/>
+          <path d="M75 288 C98 282 112 266 114 246 C92 246 78 262 75 288Z"/>
+          <path d="M75 236 C54 231 41 216 39 198 C59 198 72 213 75 236Z"/>
+          <path d="M75 236 C96 231 109 216 111 198 C91 198 78 213 75 236Z"/>
+          <path d="M75 186 C57 182 46 169 44 153 C61 153 72 166 75 186Z"/>
+          <path d="M75 186 C93 182 104 169 106 153 C89 153 78 166 75 186Z"/>
+          <path d="M75 138 C60 135 51 124 49 111 C63 111 73 122 75 138Z"/>
+          <path d="M75 138 C90 135 99 124 101 111 C87 111 77 122 75 138Z"/>
+          <path d="M75 96 C66 88 64 74 70 62 M75 96 C84 88 86 74 80 62"/>
+          <circle cx="75" cy="46" r="13"/>
+          <path d="M75 33 C68 40 68 52 75 59 C82 52 82 40 75 33Z"/>
+          <path d="M62 46 C69 39 81 39 88 46 C81 53 69 53 62 46Z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="ledger">
+    <div><span class="lab">גודל קבוצה</span><b>4 עד 30 משתתפות</b></div>
+    <div><span class="lab">איפה</span><b>אצלי או אצלכן</b></div>
+    <div><span class="lab">קליניקות</span><b>תל אביב · עמק האלה</b></div>
+    <div><span class="lab">לקבוע</span><b><a href="https://wa.link/64q9ls">בוואטסאפ</a></b></div>
+  </div>
+
+  <section id="workshops">
+    <div class="sechead">
+      <span class="kick">סדנאות</span>
+      <h2>מחפשות פסק זמן מהמירוץ, ביחד?</h2>
+      <p>בסדנה אנחנו יושבות סביב שולחן אחד ומכירות את עולם השמנים דרך הריח, לא דרך הסבר. כל אחת מרכיבה משהו בידיים שלה ולוקחת אותו הביתה. אני מגיעה עם כל הציוד, וגם למי שלא נגעה בזה מעולם זה עובד.</p>
+    </div>
+
+    <div class="entry">
+      <div class="pic"><img src="../img/candles.jpg" alt="יובל מעבירה סדנה"></div>
+      <div class="txt">
+        <span class="no">01 · AROMATHERAPY</span>
+        <h3>ארומתרפיה חווייתית</h3>
+        <p>בשבילי שמנים אתריים הם לא רק "חומרים פעילים" אלא שפה שלמה. בסדנה אנחנו מכירות את בית המרקחת של הטבע, ומתאימות תערובת לכל אחת לפי מה שהיא צריכה עכשיו.</p>
+        <a href="#contact">לקבוע מפגש</a>
+      </div>
+      <div class="idx"><span class="lab">הבסיס</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="pic"><img src="../img/hands-table.jpg" alt="ידיים מרקחות מעל שולחן"></div>
+      <div class="txt">
+        <span class="no">02 · NATURAL PHARMACY</span>
+        <h3>רוקחות טבעית</h3>
+        <p>ההמשך של הארומתרפיה, למי שרוצה גם לרקוח: שתי מרקחות שאנחנו מכינות יחד — משחה, שמן או מרח — ושיוצאות איתכן הביתה. אפשר גם ארומתרפיה בלבד, בלי החלק הזה.</p>
+        <a href="#contact">לקבוע מפגש</a>
+      </div>
+      <div class="idx"><span class="lab">תוספת<br>לארומתרפיה</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="pic"><img src="../img/yoga-cobra.jpg" alt="תנוחת יוגה"></div>
+      <div class="txt">
+        <span class="no">03 · YOGA</span>
+        <h3>יוגה ומיינדפולנס</h3>
+        <p>בשבילי יוגה היא ממש לא "עוד אימון כושר". זה המקום שבו אנחנו לומדות להשקיט את המחשבות, ולגלות שאפשר להתקדם גם מתוך הרפיה. שיעור בחוץ או בפנים, לקבוצה שרובה לא תרגלה מעולם.</p>
+        <a href="#contact">לקבוע מפגש</a>
+      </div>
+      <div class="idx"><span class="lab">בחוץ<br>או בפנים</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="pic"><img src="../img/table-setup.jpg" alt="שולחן ערוך לקראת מפגש"></div>
+      <div class="txt">
+        <span class="no">04 · DAY RETREAT</span>
+        <h3>ריטריט יום</h3>
+        <p>יום שלם יחד: מתחילות ביוגה בבוקר, וממשיכות לארומתרפיה אחרי. מתאים לקבוצה שרוצה לצאת מהשגרה ליום אחד ולחזור אחרת.</p>
+        <a href="#contact">לדבר על יום</a>
+      </div>
+      <div class="idx"><span class="lab">יום<br>מלא</span></div>
+    </div>
+
+    <div class="fits">
+      <div>
+        <h4>קבוצות פרטיות</h4>
+        <p>חברות, משפחה, ריטריט, מסיבת רווקות, בת מצווה. אצלי בעמק האלה או אצלכן.</p>
+      </div>
+      <div>
+        <h4>עסקים קטנים ומקומיים</h4>
+        <p>סטודיו, חנות, בית אבות, צוות קטן שרוצה בוקר אחר.</p>
+      </div>
+      <div>
+        <h4>ארגונים וחברות</h4>
+        <p>עיריות, מוסדות וצוותי חינוך. מגיעה עם הציוד לכל מקום בארץ.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="dates" id="dates">
+    <span class="kick">סדנאות פתוחות</span>
+    <p>מדי פעם אני פותחת מפגש לתאריך מסוים, שאפשר להצטרף אליו גם לבד. המועדים הקרובים יופיעו כאן, ואשמח לעדכן אותך כשנפתח הבא.</p>
+    <a href="https://wa.link/64q9ls">לקבל עדכון על המועד הבא</a>
+  </div>
+
+  <section id="treatments">
+    <div class="sechead">
+      <span class="kick">טיפולים</span>
+      <h2>הטיפול מתחיל בשיחה, לא בשולחן</h2>
+      <p>אנחנו מתחילות בשיחה כדי להבין בדיוק מה את צריכה, ומשם בוחרות את הטיפול. כל הטיפולים הם לנשים, בקליניקות בתל אביב ובעמק האלה.</p>
+    </div>
+    <div class="treat">
+      <div class="pic"><img src="../img/yuval-balcony.jpg" alt="יובל בקליניקה"></div>
+      <div class="list">
+        <ul>
+          <li>רפלקסולוגיה <span>מבוקש</span></li>
+          <li>נטורופתיה <span>מבוקש</span></li>
+          <li>ארומתרפיה <span>מבוקש</span></li>
+          <li>עיסוי ארומתרפי</li>
+          <li>רייקי</li>
+          <li>פרחי באך</li>
+          <li>הטיפול המשולב</li>
+        </ul>
+        <p class="after">הטיפול המשולב מחבר בין כמה מהם: שיחה, תערובת שמנים אישית, רייקי ורפלקסולוגיה עדינה — ובסופו את יוצאת עם תערובת שממשיכה לתמוך בך גם בבית. סקרנתי אותך?</p>
+        <p class="after"><a href="https://wa.link/64q9ls" style="color:var(--forest);border-bottom:1px solid var(--forest);text-decoration:none;padding-bottom:2px">לתיאום שיחה</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="note">
+      <div><img src="../img/yuval-workshop.jpg" alt="יובל מכינה שולחן סדנה"></div>
+      <div class="q">
+        <span class="kick">עליי</span>
+        <blockquote>אפשר לפעול ולהתקדם בעולם גם מתוך הרפיה</blockquote>
+        <p>אובחנתי עם קרוהן אחרי מסע בדיקות שארך תשעה חודשים, ובמשך שנים ניסיתי לחיות "חיים רגילים" עם כדורים. נקודת התפנית הגיעה דרך תזונה, צמחי מרפא ועבודה נפשית — ומשם הגעתי ללימודי נטורופתיה. האני המאמין שלי הוא שמודעות היא הצעד הראשון לריפוי.</p>
+      </div>
+    </div>
+    <div class="proof">
+      <span>כבר העברתי סדנאות ל־</span>
+      <span><b>עיריית תל אביב</b></span>
+      <span><b>סנטרל פארק</b></span>
+      <span><b>בית המייסדים</b></span>
+      <span><b>נילס יארד</b></span>
+      <span><b>שאק-איט</b></span>
+      <span><b>סטודיו באלאנס</b></span>
+      <span><b>הסיסטרס</b></span>
+      <span><b>פיזיותרפיה, הרצוג</b></span>
+      <span><b>צוותי חינוך</b></span>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="sechead">
+      <span class="kick">מוצרים</span>
+      <h2>מה שיוצא מהמרקחת</h2>
+      <p>כל תערובת נרקחת בהתאמה אישית, אז ההזמנה עוברת בשיחה או בוואטסאפ. הקטלוג המלא יהיה כאן להורדה.</p>
+    </div>
+    <div class="jars">
+      <figure><img src="../img/prod-body-oil.jpg" alt="שמן גוף"><figcaption>שמן גוף</figcaption></figure>
+      <figure><img src="../img/prod-calendula.jpg" alt="משחת קלנדולה"><figcaption>משחת קלנדולה</figcaption></figure>
+      <figure><img src="../img/prod-hand-cream.jpg" alt="קרם ידיים"><figcaption>קרם ידיים</figcaption></figure>
+      <figure><img src="../img/prod-burner.jpg" alt="תערובת למבער"><figcaption>תערובת למבער</figcaption></figure>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="big">נדבר</div>
+    <div class="rows">
+      <span><a href="https://wa.link/64q9ls">וואטסאפ</a></span>
+      <span>קליניקות · תל אביב ועמק האלה</span>
+      <span>סדנאות · בכל הארץ</span>
+      <span>זום</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>אדמורה · יובל דורון אבייב</span>
+    <span>סקיצה — כיוון משולב</span>
+  </div>
+
+</div></div>
+</body>
+</html>
