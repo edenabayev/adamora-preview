@@ -1,0 +1,38 @@
+/* additions on top of ../style.css — the v1 design stays untouched */
+@font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+05D0-05EA,U+05F3-05F4}
+.hero h1.hand{font-family:var(--hand);color:var(--forest);font-weight:400;font-size:clamp(44px,6.4vw,74px);line-height:1.08;letter-spacing:0}
+.top nav{gap:18px;font-size:15px}
+.note-line{font-size:17px;color:var(--ink-soft)}
+.small{font-size:15px;color:var(--ink-soft)}
+.stack.tight{gap:14px}
+.card h3{margin:0}
+.card .price{font-size:15px;color:var(--ink-soft)}
+.list{display:grid;gap:10px;padding-inline-start:20px;margin:0}
+.author-box{display:flex;gap:14px;align-items:center;background:var(--sand);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:15px}
+.author-box b{color:var(--forest)}
+.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.post{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:grid;gap:8px;align-content:start}
+.post .meta{font-size:14px;color:var(--ink-soft)}
+.post h3{font-size:20px;font-weight:600;margin:0}
+.testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.testi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:10px;align-content:start;font-size:16px}
+.testi small{color:var(--ink-soft)}
+.dates-list{display:grid;gap:12px;max-width:640px}
+.date{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.date .d{font-family:var(--hand);color:var(--forest);font-size:30px;line-height:1}
+.date.empty{border-style:dashed;color:var(--ink-soft)}
+.hub{display:grid;gap:12px}
+.hub a.row{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;text-decoration:none;color:var(--ink)}
+.hub a.row:hover{border-color:var(--forest)}
+.hub .n{font-family:var(--hand);color:var(--forest);font-size:30px;line-height:1}
+.hub .tag{font-size:13px;color:var(--ink-soft)}
+@media (max-width:860px){.posts{grid-template-columns:1fr}.date{grid-template-columns:auto 1fr}.date .btn{grid-column:2}}
+
+/* ——— section numbers + notes for Yuval. Everything below is removed at the end: delete .secno and .note-yuval ——— */
+.secno{display:inline-block;font-size:12px;letter-spacing:.08em;color:#8A6A1E;background:#FFF3C4;border:1px solid #E9D48A;border-radius:6px;padding:1px 8px;margin-bottom:10px;font-variant-numeric:tabular-nums;direction:ltr}
+.note-yuval{background:#FFF8DC;border:1px dashed #D9B84A;border-radius:12px;padding:14px 18px;font-size:15px;line-height:1.6;color:#4A3F1D;display:grid;gap:6px;max-width:72ch}
+.note-yuval b{color:#8A6A1E}
+.note-yuval ul{margin:0;padding-inline-start:18px;display:grid;gap:4px}
+.note-yuval.top{margin:16px auto 0;max-width:var(--max)}
+.wrap > .note-yuval{margin-top:0}
+.cta .note-yuval{text-align:right;color:#4A3F1D}
