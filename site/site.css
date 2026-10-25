@@ -48,3 +48,26 @@
 .note-yuval.top{margin:16px auto 0;max-width:var(--max)}
 .wrap > .note-yuval{margin-top:0}
 .cta .note-yuval{text-align:right;color:#4A3F1D}
+
+/* ——— products page (7.2 / 7.3): cards built from Yuval's WhatsApp catalog ——— */
+.grp{font-size:22px;font-weight:600;color:var(--forest);margin:22px 0 -4px;padding-top:6px;border-top:1px solid var(--line)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;align-content:start}
+.prod figure{margin:0;background:var(--sand)}
+.prod img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.prod .noimg{aspect-ratio:1;display:grid;place-items:center;color:var(--ink-soft);font-size:14px;background:repeating-linear-gradient(45deg,#f3efe6 0 10px,#ece6d8 10px 20px)}
+.prod .pb{padding:14px 16px 16px;display:grid;gap:6px;align-content:start}
+.prod h3{font-size:18px;font-weight:600;margin:0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.prod h3 .size{font-size:13px;color:var(--ink-soft);font-weight:400;direction:ltr}
+.prod p{margin:0;font-size:15px;line-height:1.55}
+.prod details{font-size:14px;color:var(--ink-soft);border:0;padding:0}
+.prod details summary{cursor:pointer;color:var(--forest);font-weight:600;list-style:none;font-size:14px;width:max-content}
+.prod details summary::after{content:"";float:none}
+.prod details summary::before{content:"+ ";font-weight:700}
+.prod details[open] summary::before{content:"– "}
+.prod details p{margin-top:6px;line-height:1.55;font-size:14px}
+@media (max-width:860px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.prod-grid{grid-template-columns:1fr}}
+.prod-grid.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:860px){.prod-grid.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.prod-grid.four{grid-template-columns:1fr}}
