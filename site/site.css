@@ -29,7 +29,9 @@
 @media (max-width:860px){.posts{grid-template-columns:1fr}.date{grid-template-columns:auto 1fr}.date .btn{grid-column:2}}
 
 /* ——— section numbers + notes for Yuval. Everything below is removed at the end: delete .secno and .note-yuval ——— */
-.secno{display:inline-block;font-size:12px;letter-spacing:.08em;color:#8A6A1E;background:#FFF3C4;border:1px solid #E9D48A;border-radius:6px;padding:1px 8px;margin-bottom:10px;font-variant-numeric:tabular-nums;direction:ltr}
+.wrap{position:relative}
+.secno{position:absolute;top:-22px;inset-inline-end:0;z-index:2;font-size:12px;letter-spacing:.08em;color:#8A6A1E;background:#FFF3C4;border:1px solid #E9D48A;border-radius:6px;padding:1px 8px;font-variant-numeric:tabular-nums;direction:ltr;line-height:1.6}
+.proof .secno,.quote .secno{top:-18px}
 .note-yuval{background:#FFF8DC;border:1px dashed #D9B84A;border-radius:12px;padding:14px 18px;font-size:15px;line-height:1.6;color:#4A3F1D;display:grid;gap:6px;max-width:72ch}
 .note-yuval b{color:#8A6A1E}
 .note-yuval ul{margin:0;padding-inline-start:18px;display:grid;gap:4px}
