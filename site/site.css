@@ -4,6 +4,11 @@
 .hero h1.hand{font-family:var(--hand);color:var(--forest);font-weight:400;font-size:clamp(44px,6.4vw,74px);line-height:1.08;letter-spacing:0}
 .top nav{gap:18px;font-size:15px}
 .note-line{font-size:17px;color:var(--ink-soft)}
+.logos{display:flex;flex-wrap:wrap;gap:18px 34px;align-items:center;justify-content:center}
+.logos img{height:44px;width:auto;max-width:220px;opacity:.9;color:var(--forest)}
+.logos img.svg{height:40px}
+.logos img.wide{height:36px}
+.logos .tx{font-weight:600;color:var(--forest);font-size:15px;letter-spacing:.01em;border:1px solid var(--line);border-radius:8px;padding:7px 14px;line-height:1.2;opacity:.9}
 .small{font-size:15px;color:var(--ink-soft)}
 .stack.tight{gap:14px}
 .card h3{margin:0}
