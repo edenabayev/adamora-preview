@@ -1,5 +1,6 @@
 /* additions on top of ../style.css — the v1 design stays untouched */
 @font-face{font-family:"Authentica";src:url("../fonts/authentica.woff2") format("woff2");font-weight:400;font-display:swap;unicode-range:U+05D0-05EA,U+05F3-05F4}
+.hero figure video.hero-video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 14px 14px;background:var(--sand)}
 .hero h1.hand{font-family:var(--hand);color:var(--forest);font-weight:400;font-size:clamp(44px,6.4vw,74px);line-height:1.08;letter-spacing:0}
 .top nav{gap:18px;font-size:15px}
 .note-line{font-size:17px;color:var(--ink-soft)}
