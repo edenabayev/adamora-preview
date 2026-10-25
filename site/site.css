@@ -71,3 +71,19 @@
 .prod-grid.four{grid-template-columns:repeat(4,1fr)}
 @media (max-width:860px){.prod-grid.four{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.prod-grid.four{grid-template-columns:1fr}}
+
+/* ——— round 3 (25.10) ——— */
+.card > img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin:-6px 0 4px}
+.doors.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.doors.three{grid-template-columns:1fr}}
+.intro-lines{display:grid;gap:6px;font-size:19px;line-height:1.6;max-width:60ch}
+.intro-lines p{margin:0}
+.notice{background:var(--sand);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-top:28px;max-width:76ch}
+.notice h3{margin:0 0 10px;font-size:20px;color:var(--forest)}
+.notice ul{margin:0;padding-inline-start:20px;display:grid;gap:8px;font-size:16px;line-height:1.6}
+.faq{max-width:76ch;margin-top:8px}
+.faq h3{font-size:20px;color:var(--forest);margin:0 0 4px}
+.faq details{border-bottom:1px solid var(--line);padding-block:14px}
+.faq summary{font-size:17px}
+.hero figure.logo-fig{background:var(--sand);display:grid;place-items:center;padding:40px}
+.hero figure.logo-fig img{width:60%;max-width:320px;height:auto;object-fit:contain;aspect-ratio:auto;border-radius:0}
