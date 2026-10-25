@@ -30,8 +30,10 @@
 
 /* ——— section numbers + notes for Yuval. Everything below is removed at the end: delete .secno and .note-yuval ——— */
 .wrap{position:relative}
-.secno{position:absolute;top:-22px;inset-inline-end:0;z-index:2;font-size:12px;letter-spacing:.08em;color:#8A6A1E;background:#FFF3C4;border:1px solid #E9D48A;border-radius:6px;padding:1px 8px;font-variant-numeric:tabular-nums;direction:ltr;line-height:1.6}
-.proof .secno,.quote .secno{top:-18px}
+.secno{position:absolute;top:-26px;inset-inline-end:0;z-index:2;pointer-events:none;opacity:.55;
+  font-size:11px;letter-spacing:.08em;color:#6B5516;background:rgba(255,243,196,.6);border:1px solid rgba(217,184,74,.5);
+  border-radius:5px;padding:0 7px;line-height:1.7;font-variant-numeric:tabular-nums;direction:ltr;width:max-content;max-width:none}
+.proof .secno,.quote .secno{top:-20px}
 .note-yuval{background:#FFF8DC;border:1px dashed #D9B84A;border-radius:12px;padding:14px 18px;font-size:15px;line-height:1.6;color:#4A3F1D;display:grid;gap:6px;max-width:72ch}
 .note-yuval b{color:#8A6A1E}
 .note-yuval ul{margin:0;padding-inline-start:18px;display:grid;gap:4px}
