@@ -88,3 +88,11 @@
 .hero figure.logo-fig{background:var(--sand);display:grid;place-items:center;padding:40px}
 .hero figure.logo-fig img{width:60%;max-width:320px;height:auto;object-fit:contain;aspect-ratio:auto;border-radius:0}
 .hero h3.how{font-size:22px;font-weight:600;color:var(--forest);margin:4px 0 -6px}
+/* mobile hardening (Yuval 28.10: text over images on phone) */
+.hero .wrap>*,.story .wrap>*,.doors>*,.cards>*{min-width:0}
+figure{margin:0}
+.hero figure,.story img{position:relative;z-index:0}
+.hero .stack,.story .stack{position:relative;z-index:1;background:transparent}
+@media (max-width:860px){.hero figure{width:100%;margin:0 auto}.hero figure video.hero-video,.hero figure img{height:auto;max-height:70vh}.story .wrap{display:grid}}
+.prod details ul{margin:6px 0 0;padding-inline-start:18px;display:grid;gap:4px;font-size:14px;line-height:1.5}
+.prod details li b{color:var(--ink)}
