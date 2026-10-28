@@ -87,3 +87,4 @@
 .faq summary{font-size:17px}
 .hero figure.logo-fig{background:var(--sand);display:grid;place-items:center;padding:40px}
 .hero figure.logo-fig img{width:60%;max-width:320px;height:auto;object-fit:contain;aspect-ratio:auto;border-radius:0}
+.hero h3.how{font-size:22px;font-weight:600;color:var(--forest);margin:4px 0 -6px}
