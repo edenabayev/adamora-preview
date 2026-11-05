@@ -104,3 +104,9 @@ figure{margin:0}
 .prod .inc{font-size:14px;color:var(--ink-soft);line-height:1.5}
 .prod .inc b{color:var(--ink)}
 .prod .warn{font-size:13px;color:#8a4b1e;line-height:1.45;border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
+/* 5.11 — catalog v3 */
+.prod .pb p{margin:0}
+.prod .pb p+p{margin-top:4px}
+.prod .var{font-size:14px;line-height:1.5}
+.prod .var b{color:var(--forest)}
+.notice ul li b{color:var(--forest)}
