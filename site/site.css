@@ -100,3 +100,7 @@ figure{margin:0}
 .cards.titles a.card{text-decoration:none;color:var(--ink);padding:20px 22px;display:grid;gap:8px;align-content:center;justify-items:start;transition:border-color .2s}
 .cards.titles a.card:hover{border-color:var(--forest)}
 .cards.titles h3{margin:0;font-size:20px}
+/* 5.11 — minimal catalog cards */
+.prod .inc{font-size:14px;color:var(--ink-soft);line-height:1.5}
+.prod .inc b{color:var(--ink)}
+.prod .warn{font-size:13px;color:#8a4b1e;line-height:1.45;border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
