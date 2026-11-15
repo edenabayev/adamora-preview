@@ -169,3 +169,15 @@ footer .f-where::before{content:" · "}
 /* re-check fixes */
 .mnav nav{gap:0;max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain}
 @media (max-width:860px){.hero figure.tall img{max-height:none}}
+/* ——— 15.11 evening — heading system (Eden): one font for text and headings — Assistant, two weights (400 / 600).
+   Hierarchy comes from size and colour. Authentica only in the home hero line and the three home section names. ——— */
+body{font-weight:400}
+h1,h2{font-weight:400;letter-spacing:-.2px}
+h1{font-size:clamp(34px,4.6vw,52px);line-height:1.2}
+h2{font-size:clamp(28px,3.2vw,38px);line-height:1.25}
+h3{font-weight:600}
+.quote p{font-weight:400}
+.card .num{font-family:var(--body);font-weight:600;font-size:20px;line-height:1;color:var(--forest)}
+.stack > h2 + p, .stack > h2 + .lede{margin-top:-8px}
+/* spacing: a section on the same background as the one before it starts without top padding */
+section.tight{padding-top:0}
