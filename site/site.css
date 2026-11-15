@@ -160,9 +160,12 @@ p,.lede,blockquote{text-wrap:pretty}
 :root{--ink-soft:#63675E}  /* a touch darker: muted text on sand/mint now passes AA (≈5:1) */
 .mnav[open] summary::after{content:none;display:none}   /* base style.css adds "–" to every open <details> */
 .actions{display:flex;flex-wrap:wrap;gap:12px}
-@media (min-width:861px){.story .wrap:has(> .stack:first-child){grid-template-columns:1.2fr 1fr}}  /* photo column the same width whichever side it is on */
+@media (min-width:861px){.story .wrap:has(> img:last-child){grid-template-columns:1.2fr 1fr}}  /* photo column the same width whichever side it is on */
 body{min-height:100vh;display:flex;flex-direction:column}
 main{flex:1 0 auto}
 footer .f-id{display:inline}
 footer .f-where::before{content:" · "}
 @media (max-width:860px){footer .f-id>span{display:block}footer .f-where::before{content:none}}
+/* re-check fixes */
+.mnav nav{gap:0;max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain}
+@media (max-width:860px){.hero figure.tall img{max-height:none}}
