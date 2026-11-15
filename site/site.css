@@ -181,3 +181,10 @@ h3{font-weight:600}
 .stack > h2 + p, .stack > h2 + .lede{margin-top:-8px}
 /* spacing: a section on the same background as the one before it starts without top padding */
 section.tight{padding-top:0}
+/* QA round 3 */
+.door:not(:has(> img)){grid-template-rows:auto}   /* cards without a photo (yoga: personal / group practice) were clipped */
+button,input,select,textarea{font-family:inherit}
+b,strong{font-weight:600}
+h3{font-size:21px}
+.faq h2{margin:0 0 4px}
+@media (max-width:860px){h3{font-size:19px}.door-block h2{font-size:40px}}
