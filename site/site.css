@@ -36,18 +36,12 @@
 .hub .tag{font-size:13px;color:var(--ink-soft)}
 @media (max-width:860px){.posts{grid-template-columns:1fr}.date{grid-template-columns:auto 1fr}.date .btn{grid-column:2}}
 
-/* ——— section numbers + notes for Yuval. Everything below is removed at the end: delete .secno and .note-yuval ——— */
+/* ——— section numbers: hidden; visible only with ?n=1 (for review conversations) ——— */
 .wrap{position:relative}
-.secno{position:absolute;top:-26px;inset-inline-end:0;z-index:2;pointer-events:none;opacity:.55;
-  font-size:11px;letter-spacing:.08em;color:#6B5516;background:rgba(255,243,196,.6);border:1px solid rgba(217,184,74,.5);
-  border-radius:5px;padding:0 7px;line-height:1.7;font-variant-numeric:tabular-nums;direction:ltr;width:max-content;max-width:none}
-.proof .secno,.quote .secno{top:-20px}
-.note-yuval{background:#FFF8DC;border:1px dashed #D9B84A;border-radius:12px;padding:14px 18px;font-size:15px;line-height:1.6;color:#4A3F1D;display:grid;gap:6px;max-width:72ch}
-.note-yuval b{color:#8A6A1E}
-.note-yuval ul{margin:0;padding-inline-start:18px;display:grid;gap:4px}
-.note-yuval.top{margin:16px auto 0;max-width:var(--max)}
-.wrap > .note-yuval{margin-top:0}
-.cta .note-yuval{text-align:right;color:#4A3F1D}
+.secno{display:none}
+.show-n .secno{display:block;position:absolute;top:-26px;inset-inline-end:0;z-index:2;pointer-events:none;opacity:.6;
+  font-size:11px;letter-spacing:.08em;color:#6B5516;background:rgba(255,243,196,.75);border:1px solid rgba(217,184,74,.5);
+  border-radius:5px;padding:0 7px;line-height:1.7;font-variant-numeric:tabular-nums;direction:ltr;width:max-content}
 
 /* ——— products page (7.2 / 7.3): cards built from Yuval's WhatsApp catalog ——— */
 .grp{font-size:22px;font-weight:600;color:var(--forest);margin:22px 0 -4px;padding-top:6px;border-top:1px solid var(--line)}
@@ -55,7 +49,8 @@
 .prod{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;align-content:start}
 .prod figure{margin:0;background:var(--sand)}
 .prod img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
-.prod .noimg{aspect-ratio:1;display:grid;place-items:center;color:var(--ink-soft);font-size:14px;background:repeating-linear-gradient(45deg,#f3efe6 0 10px,#ece6d8 10px 20px)}
+.prod .noimg{aspect-ratio:1;display:grid;place-items:center;background:var(--sand)}
+.prod .noimg img{width:84px;height:auto;aspect-ratio:auto;object-fit:contain}
 .prod .pb{padding:14px 16px 16px;display:grid;gap:6px;align-content:start}
 .prod h3{font-size:18px;font-weight:600;margin:0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .prod h3 .size{font-size:13px;color:var(--ink-soft);font-weight:400;direction:ltr}
@@ -110,3 +105,64 @@ figure{margin:0}
 .prod .var{font-size:14px;line-height:1.5}
 .prod .var b{color:var(--forest)}
 .notice ul li b{color:var(--forest)}
+
+/* ——— 15.11 — final look (no review notes) ——— */
+.nowrap{white-space:nowrap}
+.hero .who{display:grid;gap:10px;max-width:56ch}
+.hero .who p:first-child{color:var(--ink);font-weight:400}
+/* 1.3 — two entry cards: equal height, buttons aligned at the bottom, natural width */
+.doors.entry .door .body{display:flex;flex-direction:column;gap:12px}
+.doors.entry .door .body .btn{margin-top:auto;align-self:flex-start}
+/* 1.4 / 1.7 / 1.8 — minimal blocks: name, one paragraph, link, photo */
+.door-block h2{font-family:var(--hand);font-weight:400;font-size:clamp(44px,5.2vw,60px);line-height:1}
+.door-block .lede{max-width:46ch}
+a.more{justify-self:start;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--mint);padding-bottom:1px;transition:border-color .2s}
+a.more:hover{border-color:var(--forest)}
+/* hero photo variants */
+.hero figure.tall img{aspect-ratio:18/25}
+.hero figure.wide img{aspect-ratio:3/2;border-radius:14px}
+@media (min-width:861px){.hero .wrap:has(> figure.wide){grid-template-columns:1fr 1.1fr}}
+/* about — long text */
+.wrap.prose p,.wrap.prose blockquote{max-width:62ch}
+blockquote.quote-line{color:var(--forest);font-size:22px}
+/* mobile menu (the desktop nav is hidden under 860px) */
+.mnav{display:none;border:0;padding:0}
+.mnav summary{list-style:none;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:#fff}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary::after{content:none}
+.mnav summary span,.mnav summary span::before,.mnav summary span::after{display:block;width:18px;height:1.5px;background:var(--forest);border-radius:2px;position:relative;content:"";transition:transform .2s,opacity .2s}
+.mnav summary span::before{position:absolute;top:-6px}
+.mnav summary span::after{position:absolute;top:6px}
+.mnav[open] summary span{background:transparent}
+.mnav[open] summary span::before{transform:translateY(6px) rotate(45deg)}
+.mnav[open] summary span::after{transform:translateY(-6px) rotate(-45deg)}
+.mnav nav{position:absolute;top:100%;inset-inline:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(16,68,4,.06);display:grid;padding:6px 20px 14px}
+.mnav nav a{display:block;padding:12px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:18px}
+.mnav nav a:last-child{border-bottom:0}
+.mnav nav a[aria-current]{color:var(--forest);font-weight:600}
+@media (max-width:860px){
+  .mnav{display:block}
+  .top .wrap{gap:12px}
+  .top .btn.small{margin-inline-start:auto}
+  .hero figure.wide{max-width:none}
+  .story .wrap > img{order:-1}
+  .door-block h2{font-size:48px}
+}
+/* fix: the .small text utility was greying out small buttons (WhatsApp in the header, door buttons) */
+.btn.small{color:#fff}
+.btn.small.ghost{color:var(--forest)}
+p,.lede,blockquote{text-wrap:pretty}
+/* fix: ghost buttons inside the dark CTA were mint-on-mint (invisible) */
+.cta .btn.ghost{background:transparent;color:var(--mint);border-color:var(--mint)}
+/* door buttons keep their natural width */
+.door .body .btn{justify-self:start}
+/* ——— 15.11 — fixes after the independent QA pass ——— */
+:root{--ink-soft:#63675E}  /* a touch darker: muted text on sand/mint now passes AA (≈5:1) */
+.mnav[open] summary::after{content:none;display:none}   /* base style.css adds "–" to every open <details> */
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+@media (min-width:861px){.story .wrap:has(> .stack:first-child){grid-template-columns:1.2fr 1fr}}  /* photo column the same width whichever side it is on */
+body{min-height:100vh;display:flex;flex-direction:column}
+main{flex:1 0 auto}
+footer .f-id{display:inline}
+footer .f-where::before{content:" · "}
+@media (max-width:860px){footer .f-id>span{display:block}footer .f-where::before{content:none}}

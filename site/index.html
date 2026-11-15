@@ -10,29 +10,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&display=swap">
 <link rel="stylesheet" href="../style.css?v=2">
-<link rel="stylesheet" href="site.css?v=15">
+<link rel="stylesheet" href="site.css?v=17">
+<script>try{var q=location.search;if(/[?&]n=1/.test(q))sessionStorage.setItem("n","1");if(/[?&]n=0/.test(q))sessionStorage.removeItem("n");if(sessionStorage.getItem("n"))document.documentElement.classList.add("show-n")}catch(e){}</script>
 </head>
 <body>
 
-<div class="draft">סקיצה · האתר החדש של אדמורה · עמוד 1 — <a href="start.html" style="color:var(--mint)">לרשימת כל העמודים</a></div>
 
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="אדמורה – דף הבית"><img src="../img/logo-h.png" alt="אדמורה – Adamora"></a>
     <nav aria-label="תפריט ראשי"><a href="index.html" aria-current="page">דף הבית</a><a href="workshops.html">סדנאות</a><a href="treatments.html">קליניקה</a><a href="yoga.html">יוגה</a><a href="products.html">רוקחות</a><a href="about.html">עליי</a><a href="blog.html">בלוג</a><a href="contact.html">יצירת קשר</a></nav>
     <a class="btn small" href="https://wa.link/64q9ls">וואטסאפ</a>
+    <details class="mnav"><summary aria-label="תפריט"><span></span></summary><nav aria-label="תפריט ראשי"><a href="index.html" aria-current="page">דף הבית</a><a href="workshops.html">סדנאות</a><a href="treatments.html">קליניקה</a><a href="yoga.html">יוגה</a><a href="products.html">רוקחות</a><a href="about.html">עליי</a><a href="blog.html">בלוג</a><a href="contact.html">יצירת קשר</a></nav></details>
   </div>
 </header>
 
 <main>
 
-<div class="wrap"><aside class="note-yuval"><b>📝 סבב 2 — מה השתנה</b><ul><li><b>סבב 3.</b> כל ההערות שלך מ-25.10 הוכנסו — 12 תמונות הוחלפו לפי המספרים, וכל תיקוני הטקסט. ליד כל מקטע שהשתנה יש הערה.</li><li><b>הוחלט (עדן):</b> הנוסח שלך "בתל אביב ובעמק האלה, וגם בזום" נכנס בכל האתר · בלי לוגואים למי שאין לו · נילס יארד נשאר (הדרכה מקצועית לצוות היא עבודה אמיתית שלך) — אם לא שקטה עם זה, יורד.</li><li><b>1.6 — סרטון הקליניקה בפתיחה:</b> נכנס, במקום הפורטרט (הרִיל מיום הצילומים, בלי קול, בלופ). הפורטרט 02-11 שבחרת עבר למקטע הסיפור. "רקע אנמי" (1.5, 1.8, 1.10) — עדן ידבר איתך על זה.</li><li><b>הוחלט (עדן):</b> בלי מחירים באתר (חוץ מצימרים) · בלי עמוד מועדים נפרד · רק "תל אביב" בלי כתובת · "קליניקה" ו"רוקחות" בתפריט.</li><li>אותה שיטה: מספר מקטע + טקסט/עיצוב. כל התמונות שבחרת במספרים — הוחלפו.</li></ul></aside></div>
 
 <section class="hero">
   <div class="wrap"><span class="secno">1.1</span>
     <div class="stack">
       <h1 class="hand">אדמה · אור · אהבה</h1>
-      <p class="who">אני יובל דורון אבייב — נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה. אני מלווה נשים בתהליכי החיים דרך טיפולים הוליסטיים, סדנאות ותנועה, בתל אביב ובעמק האלה.</p>
+      <div class="who">
+        <p>נעים להכיר, אני יובל. נטורופתית מוסמכת, מטפלת הוליסטית, מורה ליוגה ומנחת סדנאות.</p>
+        <p>בין אם ניפגש בקליניקה לטיפול נטורופתי ומגע, על המזרן בשיעורי יוגה ותנועה, או בסדנאות רוקחות טבעית ומיינדפולנס ברחבי הארץ – המטרה שלי היא לעזור לך למצוא את האיזון המדויק שלך, ולהרגיש בבית בתוך הגוף שלך.</p>
+      </div>
       <div class="actions">
         <a class="btn" href="workshops.html">סדנה לקבוצה</a>
         <a class="btn ghost" href="treatments.html">טיפול אישי</a>
@@ -43,10 +46,9 @@
 </section>
 
 <section>
-  <div class="wrap stack"><span class="secno">1.3</span>
+  <div class="wrap stack"><span class="secno">1.2</span>
     <span class="kicker">במה אפשר להתחיל</span>
-    <h2>שתי דרכים לעבוד יחד</h2>
-    <div class="doors">
+    <div class="doors entry">
       <article class="door">
         <img src="../img/y-10-04.jpg" alt="יובל מעבירה סדנה לקבוצה">
         <div class="body">
@@ -59,91 +61,72 @@
         <img src="../img/y-01-07.jpg" alt="טיפול בקליניקה">
         <div class="body">
           <h3>טיפול אישי</h3>
-          <p>טיפול שמותאם אישית לצרכים שלך, לפי הסיבה שהביאה אותך. אנחנו מתחילות בשיחה טלפונית מקדימה, ומשם בוחרות יחד את הדרך. לנשים, בקליניקה ובזום.</p>
+          <p>טיפול שמותאם אישית לצרכים שלך, לפי הסיבה שהביאה אותך. אנחנו מתחילות בשיחה טלפונית מקדימה, ומשם בוחרות יחד את הדרך.<br><span class="nowrap">לנשים, בקליניקה ובזום.</span></p>
           <a class="btn small ghost" href="treatments.html">לקליניקה</a>
         </div>
       </article>
     </div>
-    <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.1 — "בקליניקות" ירד. 1.3 — התמונות הוחלפו: סדנאות 10-04, טיפול אישי 01-07.</li></ul></aside>
   </div>
 </section>
 
-<section style="background: var(--mint-soft)">
-  <div class="wrap stack"><span class="secno">1.4</span>
-    <span class="kicker">הסדנאות</span>
-    <h2>מה אפשר לעשות יחד</h2>
-    <p class="lede">מגוון סדנאות חווייתיות, שמותאמות לרצון שלכן ולקבוצה.</p>
-    <div class="cards titles">
-      <a class="card" href="workshops.html"><span class="num">א</span><h3>ארומתרפיה חווייתית</h3></a>
-      <a class="card" href="workshops.html"><span class="num">ב</span><h3>רוקחות טבעית</h3></a>
-      <a class="card" href="workshops.html"><span class="num">ג</span><h3>יוגה ומיינדפולנס</h3></a>
-      <a class="card" href="workshops.html"><span class="num">ד</span><h3>ריטריט</h3></a>
+<section class="story door-block" id="workshops" style="background: var(--mint-soft)">
+  <div class="wrap"><span class="secno">1.3</span>
+    <div class="stack">
+      <h2>סדנאות</h2>
+      <p class="lede">מגוון סדנאות חווייתיות, שמותאמות לרצון שלכן ולקבוצה.</p>
+      <a class="more" href="workshops.html">לעמוד הסדנאות ←</a>
     </div>
-    <a class="btn" href="workshops.html" style="justify-self:start">לעמוד הסדנאות</a>
-    <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.4 — כמו שהצעת: רק הכותרות, הפירוט בעמוד הסדנאות. לחיצה על כרטיס מובילה לשם.</li></ul></aside>
+    <img src="../img/y-11-11.jpg" alt="סדנה עם יובל, משתתפות במעגל על הרצפה" loading="lazy">
   </div>
 </section>
 
 <section style="background: var(--sand)">
-  <div class="wrap stack" style="justify-items:center;text-align:center"><span class="secno">1.5</span>
+  <div class="wrap stack" style="justify-items:center;text-align:center"><span class="secno">1.4</span>
     <span class="kicker">סדנאות פתוחות</span>
     <h2>מגיעות גם לבד</h2>
     <p class="lede" style="max-width:52ch">מעת לעת נפתחות סדנאות במועדים קבועים, שאליהן אפשר להצטרף גם ללא קבוצה. לבירור המועדים הקרובים, אשמח שתשלחי לי הודעה.</p>
     <a class="btn ghost" href="https://wa.link/64q9ls">לבירור מועדים</a>
-    <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>2.9 — "אשמח שתשלחי לי הודעה", כאן ובעמוד הסדנאות.</li></ul></aside>
   </div>
 </section>
 
 <section class="story" id="story">
-  <div class="wrap"><span class="secno">1.6</span>
-    <img src="../img/y-02-11.jpg" alt="יובל דורון אבייב">
+  <div class="wrap"><span class="secno">1.5</span>
+    <img src="../img/s26/3254-sq.jpg" alt="יובל דורון אבייב" loading="lazy">
     <div class="stack">
       <span class="kicker">הסיפור שלי</span>
       <blockquote>המסע שלי החל בשנת 2016, כשאובחנתי עם מחלת קרוהן. קיבלתי את התווית ״מחלה כרונית״, יחד עם המרשם הקבוע לשיכוך כאבים. משהו בתוכי התחיל לשאול — האם יש דרך אחרת?</blockquote>
       <p class="muted">המסע לריפוי הוביל אותי לחקירה עצמית, למידה מקצועית ואל עולמות הנטורופתיה והיוגה. גיליתי את העוצמה שבשילוב בין משאבי הטבע, מסורות רפואה עתיקות, ובעיקר — אמונה וחמלה עצמית.</p>
-      <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.6 — "התחיל לשאול", כמו שביקשת (גם בעמוד עליי).</li></ul></aside>
-      <a href="about.html">לסיפור המלא ←</a>
+      <a class="more" href="about.html">לסיפור המלא ←</a>
     </div>
   </div>
 </section>
 
-<section id="treatments">
-  <div class="wrap stack"><span class="secno">1.7</span>
-    <span class="kicker">הקליניקה</span>
-    <h2>הטיפול מתחיל בשיחה טלפונית מקדימה</h2>
-    <p class="lede">לפני שנפגשות, אנחנו מדברות — כדי להבין מה הביא אותך ומה מתאים לך. משם בוחרות יחד את הטיפול. לנשים, בקליניקה בתל אביב ובעמק האלה, וגם בזום.</p>
-    <div class="cards titles">
-      <a class="card" href="treatments.html"><h3>נטורופתיה</h3></a>
-      <a class="card" href="treatments.html"><h3>רפלקסולוגיה</h3></a>
-      <a class="card" href="treatments.html"><h3>ארומתרפיה</h3></a>
-      <a class="card" href="treatments.html"><h3>עיסוי ארומתרפי</h3></a>
-      <a class="card" href="treatments.html"><h3>רייקי</h3></a>
-      <a class="card" href="treatments.html"><h3>פרחי באך</h3></a>
-      <a class="card" href="integrated.html"><h3>הטיפול המשולב</h3></a>
-    </div>
-    <a class="btn" href="treatments.html" style="justify-self:start">לקליניקה</a>
-    <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.7 — כמו שהצעת: רק הכותרות, הפירוט בעמוד הקליניקה. הטיפול המשולב מוביל לעמוד שלו.</li></ul></aside>
-  </div>
-</section>
-
-<section class="story" id="yoga" style="background: var(--sand)">
-  <div class="wrap"><span class="secno">1.8</span>
+<section class="story door-block" id="treatments" style="background: var(--sand)">
+  <div class="wrap"><span class="secno">1.6</span>
     <div class="stack">
-      <span class="kicker">יוגה</span>
-      <h2>תרגול אישי — אני והמזרן</h2>
-      <p class="lede">היוגה לימדה אותי להתנהל מתוך הרפיה, לנשום, לרווח בין המחשבות ולחיות בנוכחות. בשבילי יוגה היא לא אימון, אלא תרגול אישי — אני והמזרן, הגוף והנפש.</p>
-      <p class="muted">תרגול אישי, קבוצות קטנות, ויוגה בחוץ לקבוצות ולצוותים.</p>
-      <a href="yoga.html">לעמוד היוגה ←</a>
-      <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.8 — הניסוח שלך, והתמונה 08-25 שבחרת. הרקע — לסבב העיצוב.</li></ul></aside>
+      <h2>קליניקה</h2>
+      <p class="lede">הטיפול מתחיל בשיחה טלפונית מקדימה. לפני שנפגשות, אנחנו מדברות — כדי להבין מה הביא אותך ומה מתאים לך. משם בוחרות יחד את הטיפול. לנשים, בקליניקה בתל אביב ובעמק האלה, וגם בזום.</p>
+      <a class="more" href="treatments.html">לעמוד הקליניקה ←</a>
     </div>
-    <img src="../img/y-08-25.jpg" alt="שיעור יוגה בפארק">
+    <img src="../img/s26/3610-sq.jpg" alt="יובל עם רולר שמנים, באור של סוף היום" loading="lazy">
+  </div>
+</section>
+
+<section class="story door-block" id="yoga">
+  <div class="wrap"><span class="secno">1.7</span>
+    <img src="../img/y-08-25.jpg" alt="שיעור יוגה בפארק" loading="lazy">
+    <div class="stack">
+      <h2>יוגה</h2>
+      <p class="lede">היוגה לימדה אותי להיות נוכחת, לנשום ולהרפות.<br>בשבילי יוגה היא לא אימון, אלא תרגול — אני והמזרן, הגוף והנפש.</p>
+      <a class="more" href="yoga.html">לעמוד היוגה ←</a>
+    </div>
   </div>
 </section>
 
 <section id="products" style="background: var(--mint-soft)">
-  <div class="wrap stack"><span class="secno">1.9</span>
+  <div class="wrap stack"><span class="secno">1.8</span>
     <span class="kicker">הרוקחות</span>
-    <h2>מהמטבח הרוקחי של אדמורה</h2>
+    <h2>המוצרים של אדמורה</h2>
     <p class="lede">משחות, שמנים, קרמים ומארזים שאני רוקחת בעבודת יד. מכיוון שכל המוצרים נרקחים מחומרים טבעיים, צמחי מרפא ושמנים אתריים פעילים, חשוב לי לוודא שמה שבחרת מתאים בדיוק לך. הרכישה מתבצעת בשיחה אישית – טופס קצר, ואני יוצרת קשר להתאמה.</p>
     <div class="products">
       <figure><img src="../img/products/calendula.jpg" alt="משחת קלנדולה"><figcaption>משחת קלנדולה</figcaption></figure>
@@ -151,13 +134,12 @@
       <figure><img src="../img/products/set-calm.jpg" alt="מארז שינה"><figcaption>מארז שינה</figcaption></figure>
       <figure><img src="../img/products/set-care.jpg" alt="מארז טיפוח"><figcaption>מארז טיפוח</figcaption></figure>
     </div>
-    <div class="actions"><a class="btn ghost" href="products.html">לקטלוג המלא</a><a class="btn ghost" href="https://wa.link/64q9ls">להזמנה בוואטסאפ</a></div>
-    <aside class="note-yuval"><b>📝 הערה ליובל</b><ul><li>1.9 — הנוסח שלך ״איך רוכשים״ (28.10), מקוצר לדף הבית; המלא בעמוד הרוקחות. שני מוצרים ושני מארזים — תגידי אם את רוצה אחרים.</li><li><b>הסרטון הואט</b> (פי 1.7, כמו שביקשת). <b>בנייד:</b> לא הצלחתי לשחזר את הטקסט שעולה על התמונות — תשלחי צילום מסך של המקום, ואיזה טלפון. בינתיים חיזקתי את ה-CSS לנייד.</li></ul></aside>
+    <div class="actions"><a class="btn" href="products.html">לקטלוג המלא</a><a class="btn ghost" href="https://wa.link/64q9ls">להזמנה בוואטסאפ</a></div>
   </div>
 </section>
 
 <section class="cta" id="contact">
-  <div class="wrap stack" style="justify-items:center"><span class="secno">1.11</span>
+  <div class="wrap stack" style="justify-items:center"><span class="secno">1.9</span>
     <span class="kicker">איפה זה קורה</span>
     <h2>בואו נדבר</h2>
     <p>אני מקבלת בשתי קליניקות — בתל אביב ובעמק האלה. חלק מהמפגשים מתקיימים גם בזום, כך שאפשר להצטרף מכל מקום. סדנאות אני מעבירה במקום שנקבע מראש — אצלי או אצלכן, בכל הארץ.</p>
@@ -171,7 +153,7 @@
 <footer>
   <div class="wrap">
     <img src="../img/logo-h.png" alt="אדמורה – Adamora">
-    <span>יובל דורון אבייב · נטורופתית מוסמכת, ארומתרפיסטית ומורה ליוגה · תל אביב ועמק האלה</span>
+    <span class="f-id"><span>יובל דורון אבייב · נטורופתית מוסמכת, מטפלת הוליסטית, מורה ליוגה ומנחת סדנאות</span><span class="f-where">תל אביב ועמק האלה</span></span>
     <span><a href="legal.html">מדיניות פרטיות · הצהרת נגישות</a> · © 2026 אדמורה – Adamora</span>
   </div>
 </footer>
