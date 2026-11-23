@@ -336,8 +336,61 @@ form.lead{width:100%}
   .car-track{flex-wrap:wrap;overflow:visible}
   .door,.card,.prod,.post,.testi,figure{break-inside:avoid}
 }
-/* 18.11 — products without their own photo: a similar product, heavily blurred, with a small tag */
-.prod figure.ph{position:relative}
-.prod figure.ph img{aspect-ratio:1;object-fit:cover;width:100%}
-.ph-tag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(253,252,249,.94);color:var(--forest);font-size:13.5px;font-weight:600;line-height:1;padding:7px 12px;border-radius:999px;border:1px solid var(--line);box-shadow:0 2px 8px rgba(16,68,4,.08)}
-.ph-tag svg{flex:none}
+/* ——— 23.11 — the design meeting (Eden + Yuval). Only the existing colour variables, so a new palette drops in later ——— */
+/* header: the page you are on glows softly; hover gets the same colour */
+.top nav{gap:4px}
+.top nav a{padding:6px 11px;border-radius:999px;transition:background-color .25s,color .25s,box-shadow .25s}
+.top nav a:hover{background:var(--mint-soft);color:var(--forest)}
+.top nav a[aria-current]{border-bottom:0;background:var(--mint);color:var(--forest);font-weight:600;animation:navglow 3.6s ease-in-out infinite}
+@keyframes navglow{0%,100%{box-shadow:0 0 0 0 rgba(205,236,218,0),0 0 10px 1px rgba(205,236,218,.55)}50%{box-shadow:0 0 0 3px rgba(205,236,218,.45),0 0 22px 6px rgba(205,236,218,.8)}}
+@media (min-width:861px) and (max-width:1100px){.top nav{font-size:14px}.top nav a{padding:6px 8px}}
+/* footer: everything centred */
+footer .wrap{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:14px}
+footer .f-nav{justify-content:center;order:0}
+footer .wrap > span:last-child{order:0}
+/* cards and doors change colour under the mouse */
+.card,.door{transition:background-color .25s,border-color .25s}
+.card:hover,.door:hover{background:var(--mint-soft);border-color:var(--mint)}
+/* carousel arrows: round, quiet, fill on hover */
+.car-nav button,.tcar-nav button{width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--forest);cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 10px rgba(16,68,4,.08);transition:background-color .2s,color .2s,border-color .2s}
+.car-nav button:hover,.tcar-nav button:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+/* clinic testimonials: one in front, the neighbours faded at the sides */
+.tcar-track{display:flex;align-items:flex-start;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px calc((100% - min(560px,84%)) / 2) 12px;-webkit-overflow-scrolling:touch}
+.tcar-track::-webkit-scrollbar{display:none}
+.tcar-track:focus-visible{outline:2px solid var(--forest);outline-offset:4px;border-radius:14px}
+.tcar .testi{flex:0 0 min(560px,84%);scroll-snap-align:center;opacity:.35;transform:scale(.94);transition:opacity .35s,transform .35s;cursor:pointer}
+.tcar .testi.on{opacity:1;transform:none;cursor:auto}
+.tcar-nav{display:flex;justify-content:center;gap:12px;margin-top:6px}
+@media (prefers-reduced-motion:reduce){.tcar .testi{transition:none}}
+/* workshops: the client logos as their own block, with room above and below */
+.clients{background:var(--sand);padding-block:56px}
+.clients .wrap{justify-items:center;text-align:center;gap:22px}
+.clients h2{color:var(--forest)}
+/* "מגיעה לבד" — one line and a button */
+.alone{background:var(--mint-soft);padding-block:30px}
+.alone .wrap{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;justify-content:center;text-align:center}
+.alone p{margin:0;font-size:18px}
+/* clinic: the opening photo whole (no crop), the treatment clip beside the questions */
+.hero figure.natural{max-width:430px;justify-self:center}
+.hero figure.natural img{aspect-ratio:auto;height:auto}
+.faq-pair{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.faq-pair .stack{max-width:760px}
+figure.clip{margin:0;position:relative}
+figure.clip video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:200px 200px 14px 14px;background:var(--sand)}
+@media (max-width:860px){.faq-pair{grid-template-columns:1fr}figure.clip{max-width:300px;margin-inline:auto}}
+/* products: questions on the right, "חשוב לדעת" on the left — one block */
+.faq-notice{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+.faq-notice .faq,.faq-notice .notice{max-width:none;margin-top:0}
+@media (max-width:860px){.faq-notice{grid-template-columns:1fr}}
+/* home: the clinic photo keeps its height */
+.story img.tall{aspect-ratio:4/5}
+/* yoga: four kinds of practice */
+.doors.four{grid-template-columns:repeat(4,1fr)}
+.doors.four .door .body{display:flex;flex-direction:column;gap:10px}
+.doors.four .door .body .btn{margin-top:auto;align-self:flex-start}
+@media (max-width:1099px){.doors.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.doors.four{grid-template-columns:1fr}}
+/* articles: the medical note at the end (Yuval 18.11) */
+.disclaimer{font-size:15px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;margin-top:28px}
+@media (prefers-reduced-motion:reduce){.top nav a[aria-current]{animation:none}}
+.tcar{min-width:0;max-width:100%}
