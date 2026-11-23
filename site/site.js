@@ -69,19 +69,19 @@
     var mark = function () {
       var r = tr.getBoundingClientRect(), mid = r.left + r.width / 2, best = 0, bd = 1e9;
       items.forEach(function (x, i) { var b = x.getBoundingClientRect(), d = Math.abs(b.left + b.width / 2 - mid); if (d < bd) { bd = d; best = i; } });
-      cur = best; items.forEach(function (x, i) { x.classList.toggle("on", i === best); });
+      cur = best; items.forEach(function (x, i) { x.classList.toggle("on", i === best); x.classList.toggle("near", Math.abs(i - best) === 1); });
     };
-    var go = function (i) {
+    var go = function (i, now) {
       i = Math.max(0, Math.min(items.length - 1, i));
       var r = tr.getBoundingClientRect(), b = items[i].getBoundingClientRect();
-      tr.scrollBy({ left: (b.left + b.width / 2) - (r.left + r.width / 2), behavior: reduce ? "auto" : "smooth" });
+      tr.scrollBy({ left: (b.left + b.width / 2) - (r.left + r.width / 2), behavior: now || reduce ? "auto" : "smooth" });
     };
     tr.addEventListener("scroll", function () { clearTimeout(tm); tm = setTimeout(mark, 60); }, { passive: true });
     var pv = c.querySelector(".tcar-prev"), nx = c.querySelector(".tcar-next");
     if (pv) pv.addEventListener("click", function () { go(cur - 1); });
     if (nx) nx.addEventListener("click", function () { go(cur + 1); });
     items.forEach(function (x, i) { x.addEventListener("click", function () { if (i !== cur) go(i); }); });
-    mark(); addEventListener("resize", mark);
+    go(Math.floor((items.length - 1) / 2), true); mark(); addEventListener("resize", mark);
   });
 
   /* lead forms continue in WhatsApp */
