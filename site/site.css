@@ -331,7 +331,7 @@ form.lead{width:100%}
 @media print{
   .top{position:static}
   .mnav,.car-nav,.btn,form.lead,video,.vid-toggle,.skip{display:none!important}
-  .cta,.cta *{color:#3D403A!important;background:none!important}
+  .cta,.cta *{color:#3A2F26!important;background:none!important}
   section{padding-block:24px}
   .car-track{flex-wrap:wrap;overflow:visible}
   .door,.card,.prod,.post,.testi,figure{break-inside:avoid}
@@ -394,3 +394,46 @@ figure.clip video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;bo
 .disclaimer{font-size:15px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;margin-top:28px}
 @media (prefers-reduced-motion:reduce){.top nav a[aria-current]{animation:none}}
 .tcar{min-width:0;max-width:100%}
+
+/* ——— 23.11 evening — palette "אדמה" (Eden's pick). Warm paper and sand instead of the greys; forest #104404 and mint #CDECDA stay
+   the brand core; terracotta (--accent) for hovers, the menu glow and small links. Values: design-lang tokens-adama.css, contrast
+   checked (body 12:1, muted 5.3–6.8:1, --accent-text 5.2:1 or more on every background used here). ——— */
+:root{--paper:#FBF6EE;--sand:#F3E6D6;--card:#FFFCF7;--mint-soft:#E7F3EA;--ink:#3A2F26;--ink-soft:#6A5646;--line:#E4D3BE;--accent:#A94F2D;--accent-ink:#FFF8F0;--accent-soft:#F6DDCC;--accent-text:#944325;--glow:rgba(169,79,45,.30);--grad:linear-gradient(165deg,#FBF6EE 0%,#F3E6D6 55%,#F2D5C2 100%)}
+.top{background:rgba(251,246,238,.92)}
+/* buttons: a soft terracotta ring on hover instead of fading */
+.btn{transition:background-color .2s,box-shadow .2s,transform .2s,color .2s}
+.btn:hover{opacity:1;box-shadow:0 0 0 4px var(--accent-soft),0 6px 18px -6px var(--glow);transform:translateY(-1px)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.cta .btn.ghost:hover{background:transparent}
+/* menu: the page you are on "breathes" (glow that grows and fades, 3.2s); hover gets the same colour */
+.top nav a:hover{background:var(--accent-soft);color:var(--forest);box-shadow:0 0 14px var(--glow)}
+.top nav a[aria-current]{background:var(--accent-soft);color:var(--forest);font-weight:600;box-shadow:0 0 0 1px var(--accent-soft),0 0 18px var(--glow);animation:breathe 3.2s ease-in-out infinite alternate}
+@keyframes breathe{from{box-shadow:0 0 0 1px var(--accent-soft),0 0 10px var(--glow)}to{box-shadow:0 0 0 1px var(--accent-soft),0 0 22px var(--glow)}}
+.mnav nav a[aria-current]{background:var(--accent-soft);border-radius:10px;padding-inline:10px}
+.mnav nav{box-shadow:0 12px 24px rgba(58,47,38,.08)}
+/* cards and doors: warm fill, terracotta edge, a small lift */
+.card,.door{transition:background-color .25s,border-color .25s,transform .25s,box-shadow .25s}
+.card:hover,.door:hover{background:var(--accent-soft);border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 30px -16px var(--glow)}
+.cards.titles a.card:hover,.hub a.row:hover{border-color:var(--accent)}
+/* "קראי עוד" and similar small links */
+a.more{color:var(--accent-text);border-bottom-color:var(--accent-soft)}
+a.more:hover{border-color:var(--accent)}
+.card:hover a.more{border-bottom-color:var(--accent)}
+/* carousel arrows */
+.car-nav button,.tcar-nav button{box-shadow:0 2px 10px rgba(58,47,38,.08)}
+.car-nav button:hover,.tcar-nav button:hover{color:var(--paper)}
+/* footer on sand, the e-mail under the name */
+footer{background:var(--sand);border-top:1px solid var(--line)}
+footer .f-mail{color:var(--forest);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line);padding-block:6px}
+footer .f-mail:hover{border-color:var(--accent)}
+/* contact page: phone and e-mail for those without WhatsApp */
+.contact-alt{font-size:17px;color:var(--ink-soft)}
+.contact-alt a{color:var(--forest);font-weight:600}
+@media (prefers-reduced-motion:reduce){.top nav a[aria-current]{animation:none}.card:hover,.door:hover,.btn:hover{transform:none}}
+.tic{display:none}   /* the clinic icons stay hidden unless the .t-icons line below is there */
+/* ——— optional extras from the design language: each is ONE line — delete the line to remove it ——— */
+.hero-warm{background:var(--grad)}
+.bg-grid{background:var(--paper) url("../img/pattern-grid.svg") center top/192px 192px}
+.steps-ring{counter-reset:s}.steps-ring .step{counter-increment:s;border-top:0;padding-top:8px;grid-template-columns:none}.steps-ring .step::before{content:counter(s);width:42px;height:42px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent-text);background:var(--card);display:grid;place-items:center;font-weight:600;font-size:18px}
+.t-icons .tic{display:block;width:40px;height:40px;color:var(--forest);--leaf:var(--accent-soft);margin-bottom:2px}.t-icons .card:hover .tic{--leaf:var(--card)}
+
